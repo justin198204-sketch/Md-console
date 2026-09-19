@@ -79,7 +79,7 @@ header{position:sticky;top:0;z-index:5;padding:6px 2px 10px;background:linear-gr
   <div class="sec"><span>同步到幕僚长</span></div>
   <div class="card item">
     <div class="title">Webhook 地址（只需贴一次）</div>
-    <p class="hint">打开例行任务「MD拍板同步」复制 Webhook URL，粘贴保存。入口：[Webhook URL](grokbot://app/v1/sidebar?target=webhook-url&automation=md)</p>
+    <p class="hint">提交后会复制摘要；请粘贴到幕僚长聊天（最稳）。Webhook 可作备用：打开例行任务「MD拍板同步」复制 URL 保存。入口：[Webhook URL](grokbot://app/v1/sidebar?target=webhook-url&automation=md)</p>
     <input class="field" id="webhookUrl" type="url" placeholder="https://… webhook …" autocomplete="off"/>
     <button class="btn primary" id="btnSaveHook" type="button" style="margin-top:10px;width:100%">保存地址</button>
   </div>
@@ -196,20 +196,29 @@ document.getElementById('btnSubmit').onclick=async()=>{
   for(const d of list){const ol=otherLetter(d); if(ol&&m[d.id]===ol&&!(tmap[d.id]||'').trim()){toast('请填写「其他」');return}}
   const payload={source:'md-console',date:data.date,summary:summary(),compact:list.map((d,i)=>`${i+1}${m[d.id].toLowerCase()}`).join(','),
     decisions:list.map((d,i)=>({n:i+1,id:d.id,text:d.text,context:d.context||'',choice:m[d.id],label:labelFor(d,m[d.id],tmap[d.id]||''),otherText:otherLetter(d)===m[d.id]?(tmap[d.id]||''):'',note:d.note||'',noteSource:d.noteSource||'',noteAt:d.noteAt||'',line:d.line||''}))};
-  const body=JSON.stringify(payload);
-  try{await navigator.clipboard.writeText(payload.summary)}catch{}
-  if(!hook){toast('未配置 Webhook，摘要已复制，请粘贴给幕僚长'); tab='set'; render(); return}
-  let ok=false;
-  try{
-    if(navigator.sendBeacon){
-      ok=navigator.sendBeacon(hook,new Blob([body],{type:'text/plain;charset=UTF-8'}));
-    }
-    if(!ok){
-      await fetch(hook,{method:'POST',mode:'no-cors',body:body});
-      ok=true;
-    }
-  }catch(e){ok=false}
-  toast(ok?'已提交，请等幕僚长确认（摘要已复制）':'仍失败，请把复制的摘要贴到幕僚长聊天');
+  const text=payload.summary;
+  let copied=false;
+  try{await navigator.clipboard.writeText(text); copied=true}catch(e){
+    try{
+      const ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.left='-9999px';
+      document.body.appendChild(ta); ta.select(); copied=document.execCommand('copy'); document.body.removeChild(ta);
+    }catch{}
+  }
+  // best-effort webhook; never block UX on CORS
+  if(hook){
+    try{ navigator.sendBeacon && navigator.sendBeacon(hook, text); }catch{}
+    try{ fetch(hook,{method:'POST',mode:'no-cors',body:text,keepalive:true}); }catch{}
+    try{
+      const f=document.createElement('form'); f.method='POST'; f.action=hook; f.target='_blank'; f.style.display='none';
+      const inp=document.createElement('input'); inp.name='payload'; inp.value=text; f.appendChild(inp);
+      document.body.appendChild(f); /* skip auto-submit form to avoid opening blank tab */ document.body.removeChild(f);
+    }catch{}
+  }
+  if(!hook){
+    toast(copied?'未配置 Webhook，摘要已复制，请粘贴给幕僚长':'请手动复制选择结果发给幕僚长');
+    tab='set'; render(); return;
+  }
+  toast(copied?'摘要已复制 — 请粘贴到幕僚长聊天（Webhook 可能被浏览器拦截）':'请把选项结果发给幕僚长');
 };
 document.getElementById('lineFilters')?.addEventListener('click',e=>{
   const b=e.target.closest('[data-line]'); if(!b) return;
