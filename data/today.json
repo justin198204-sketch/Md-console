@@ -1,0 +1,136 @@
+{
+  "date": "2026-09-19",
+  "title": "MD 快捷台",
+  "updatedAt": "2026-09-19T08:10:00+08:00",
+  "decisions": [
+    {
+      "id": "d1",
+      "text": "Joachim 搬迁：9天档期确认（邮件你自己改，不代发）",
+      "source": "邮件",
+      "line": "KSL",
+      "status": "yellow",
+      "options": [
+        "A 按9天确认",
+        "B 改14天报价",
+        "C 出差后再说"
+      ],
+      "chosen": "A"
+    },
+    {
+      "id": "d2",
+      "text": "Patrick 8月财务上传 + CPCONS",
+      "source": "邮件/Teams",
+      "line": "KSL",
+      "status": "yellow",
+      "options": [
+        "A 今日处理",
+        "B 返程后周一",
+        "C 先搁置"
+      ],
+      "chosen": "B"
+    },
+    {
+      "id": "d3",
+      "text": "ekom21 申请 26.5214",
+      "source": "邮件",
+      "line": "KSL",
+      "status": "green",
+      "options": [
+        "A 继续推进",
+        "B 先搁置",
+        "C 不做"
+      ],
+      "chosen": "C"
+    }
+  ],
+  "quadrants": {
+    "iu": [
+      {
+        "id": "iu1",
+        "text": "SQ 值机 — 已完成关闭",
+        "source": "邮件",
+        "line": "KSL",
+        "done": true
+      },
+      {
+        "id": "iu2",
+        "text": "Patrick 财务 — 返程后周一",
+        "source": "邮件",
+        "line": "KSL"
+      }
+    ],
+    "inu": [
+      {
+        "id": "inu1",
+        "text": "盯 9/23 股东会 + PSR（6月格式）",
+        "source": "Teams",
+        "line": "KSL"
+      },
+      {
+        "id": "inu2",
+        "text": "Frank：周一对齐股东会新幻灯片",
+        "source": "Teams",
+        "line": "KSL"
+      },
+      {
+        "id": "inu3",
+        "text": "Richpeace 三条口径 — 出差后再说",
+        "source": "交接",
+        "line": "Richpeace"
+      }
+    ],
+    "niu": [],
+    "ninu": []
+  },
+  "calendar": [
+    {
+      "id": "c1",
+      "when": "9/21 一 11:00–12:00",
+      "text": "Management Meeting KSL",
+      "where": "Besprechungsraum 2. OG",
+      "who": "Frank / Guido / Joachim / Carolin / 你"
+    },
+    {
+      "id": "c2",
+      "when": "9/21 一 13:30–14:30",
+      "text": "Sales meeting",
+      "where": "",
+      "who": ""
+    },
+    {
+      "id": "c3",
+      "when": "9/22–25",
+      "text": "2026汉堡国际风能展（全天）",
+      "where": "",
+      "who": ""
+    },
+    {
+      "id": "c4",
+      "when": "9/23 三 03:30–11:30",
+      "text": "智能制造事业部产销研（百福上海、上工富怡）",
+      "where": "注意时区",
+      "who": ""
+    },
+    {
+      "id": "c5",
+      "when": "9/28 一 11:00–12:00",
+      "text": "Management Meeting KSL",
+      "where": "Besprechungsraum 2. OG",
+      "who": ""
+    },
+    {
+      "id": "c6",
+      "when": "9/28 一 13:30–14:30",
+      "text": "Sales meeting",
+      "where": "",
+      "who": ""
+    },
+    {
+      "id": "c7",
+      "when": "9/30 三 13:00–14:00",
+      "text": "same girl friend of Guido",
+      "where": "",
+      "who": ""
+    }
+  ]
+}
