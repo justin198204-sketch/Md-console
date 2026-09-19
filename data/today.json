@@ -1,7 +1,7 @@
 {
   "date": "2026-09-19",
   "title": "MD 快捷台",
-  "updatedAt": "2026-09-19T09:55:00+08:00",
+  "updatedAt": "2026-09-19T10:25:00+08:00",
   "lines": [
     "全部",
     "KSL",
@@ -16,7 +16,7 @@
       "line": "KSL",
       "note": "已选 C 出差后再说；可改。",
       "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 08:32 +08",
+      "noteAt": "2026-09-19 10:25 +08",
       "options": [
         "A 按9天确认",
         "B 改14天报价",
@@ -31,16 +31,16 @@
       "context": "待核8月 BS/P&L/YTF 上传与 CPCONS；股东会+PSR约9/23需盯。",
       "source": "邮件/Teams",
       "line": "KSL",
-      "note": "已选 B 返程后周一。",
+      "note": "已选 C 先搁置（覆盖原 2B 周一）；可改。",
       "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 08:32 +08",
+      "noteAt": "2026-09-19 10:25 +08",
       "options": [
         "A 今日处理",
         "B 返程后周一",
         "C 先搁置",
         "D 其他…"
       ],
-      "chosen": "B"
+      "chosen": "C"
     },
     {
       "id": "d3",
@@ -48,16 +48,16 @@
       "context": "外部申请需先验发件人/附件再定是否推进。",
       "source": "邮件",
       "line": "KSL",
-      "note": "已选 C 不做。",
+      "note": "已选 B 先搁置（覆盖原 3C 不做）；可改。",
       "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 08:32 +08",
+      "noteAt": "2026-09-19 10:25 +08",
       "options": [
         "A 继续推进",
         "B 先搁置",
         "C 不做",
         "D 其他…"
       ],
-      "chosen": "C"
+      "chosen": "B"
     },
     {
       "id": "r1",
@@ -65,15 +65,16 @@
       "context": "多针细节、Adient 精度风险联合评估、Morocco 直订/售后边界。出差前搁置不外发。收件未回复待登录后补扫。",
       "source": "交接/邮件",
       "line": "Richpeace",
-      "note": "出差前不外发。",
-      "noteSource": "Justin批示",
-      "noteAt": "2026-09-18",
+      "note": "已选 C 继续搁置；出差前不外发。",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-09-19 10:25 +08",
       "options": [
         "A 回来立刻重启",
         "B 指定日期再议",
         "C 继续搁置",
         "D 其他…"
-      ]
+      ],
+      "chosen": "C"
     }
   ],
   "quadrants": {
@@ -87,7 +88,7 @@
       },
       {
         "id": "iu2",
-        "text": "Patrick 财务 — 返程后周一",
+        "text": "Patrick 财务 — 先搁置",
         "source": "邮件",
         "line": "KSL"
       }
@@ -213,5 +214,10 @@
       "line": "KSL"
     }
   ],
-  "scanNote": "Richpeace exmail session expired; inbox unreplied scan pending re-login"
+  "scanNote": "Richpeace exmail session expired; inbox unreplied scan pending re-login",
+  "lastBoard": {
+    "at": "2026-09-19 10:25 +08",
+    "choices": "1c,2c,3b,4c",
+    "via": "chat-paste+KSL sync"
+  }
 }
