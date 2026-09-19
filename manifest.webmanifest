@@ -1,8 +1,7 @@
 {
-  "name": "MD 快捷台",
-  "short_name": "MD台",
+  "name": "MD Dashboard",
+  "short_name": "MD Dash",
   "start_url": "./index.html",
-  "scope": "./",
   "display": "standalone",
   "background_color": "#0B1220",
   "theme_color": "#0B1220",
@@ -14,5 +13,6 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "scope": "./"
 }
