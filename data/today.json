@@ -1,7 +1,7 @@
 {
   "date": "2026-09-20",
   "title": "MD Dashboard V1.1",
-  "updatedAt": "2026-09-20T02:00:00+08:00",
+  "updatedAt": "2026-09-20T02:15:00+08:00",
   "lines": [
     "全部",
     "KSL",
@@ -9,9 +9,57 @@
   ],
   "decisions": [
     {
+      "id": "d4",
+      "text": "Yanis Aber：Pending issues / PO 是否已放行",
+      "context": "yanis.aber@forvia.com；9/19 05:01；主题 Pending issues and account update - KSL；未见 Justin 回复",
+      "source": "邮件",
+      "line": "KSL",
+      "note": "新增未回复，待拍板",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-20 02:15 +08",
+      "options": [
+        "A 今日回",
+        "B 周一回",
+        "C 先搁置",
+        "D 其他…"
+      ]
+    },
+    {
+      "id": "d5",
+      "text": "Joyce：Richpeace parts PI payment",
+      "context": "joyce@richpeace.com；9/19 12:29；约 RMB 5228 / ~68000 RUB；请会计周二备现；另有签约债务确认",
+      "source": "邮件",
+      "line": "KSL",
+      "note": "新增未回复，待拍板",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-20 02:15 +08",
+      "options": [
+        "A 今日批/回",
+        "B 交财务周一",
+        "C 先搁置",
+        "D 其他…"
+      ]
+    },
+    {
+      "id": "d6",
+      "text": "Ida：墨西哥 DA 设备价格",
+      "context": "ida@richpeace.com；9/18 11:22；附多档报价待审",
+      "source": "邮件",
+      "line": "KSL",
+      "note": "新增未回复，待拍板",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-20 02:15 +08",
+      "options": [
+        "A 今日审",
+        "B 交Richpeace秘书",
+        "C 出差后再说",
+        "D 其他…"
+      ]
+    },
+    {
       "id": "d1",
       "text": "Joachim 搬迁：档期确认",
-      "context": "Dual KSL CNC Sewing + Silicone 搬迁。报价按14天，确认窗口9天（2026-11-26～12-04）。确认信不代发。",
+      "context": "Dual KSL CNC Sewing + Silicone 搬迁。报价按14天，确认窗口9天。确认信不代发。",
       "source": "邮件",
       "line": "KSL",
       "note": "已选 C 出差后再说；可改。",
@@ -31,7 +79,7 @@
       "context": "待核8月 BS/P&L/YTF 上传与 CPCONS；股东会+PSR约9/23需盯。",
       "source": "邮件/Teams",
       "line": "KSL",
-      "note": "已选 C 先搁置（覆盖原 2B 周一）；可改。",
+      "note": "已选 C 先搁置；可改。",
       "noteSource": "Justin 拍板",
       "noteAt": "2026-09-19 10:25 +08",
       "options": [
@@ -48,7 +96,7 @@
       "context": "外部申请需先验发件人/附件再定是否推进。",
       "source": "邮件",
       "line": "KSL",
-      "note": "已选 B 先搁置（覆盖原 3C 不做）；可改。",
+      "note": "已选 B 先搁置；可改。",
       "noteSource": "Justin 拍板",
       "noteAt": "2026-09-19 10:25 +08",
       "options": [
@@ -58,6 +106,22 @@
         "D 其他…"
       ],
       "chosen": "B"
+    },
+    {
+      "id": "d7",
+      "text": "PSR Bangert：逾期补交？",
+      "context": "Melanie Bangert；原定 9/14；Finance 需 J.Zhang/P.Müller；仍未见回复",
+      "source": "邮件",
+      "line": "KSL",
+      "note": "逾期未闭环，待拍板",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-20 02:15 +08",
+      "options": [
+        "A 周一补",
+        "B 继续搁",
+        "C 交Patrick跟",
+        "D 其他…"
+      ]
     },
     {
       "id": "r1",
@@ -81,14 +145,13 @@
     "iu": [
       {
         "id": "iu1",
-        "text": "SQ 值机 — 已完成关闭",
+        "text": "Joyce PI payment 待处理",
         "source": "邮件",
-        "line": "KSL",
-        "done": true
+        "line": "KSL"
       },
       {
         "id": "iu2",
-        "text": "Patrick 财务 — 先搁置",
+        "text": "PSR Bangert 逾期",
         "source": "邮件",
         "line": "KSL"
       }
@@ -109,6 +172,18 @@
       {
         "id": "inu3",
         "text": "Joachim 搬迁 — 出差后再说（不发不催）",
+        "source": "邮件",
+        "line": "KSL"
+      },
+      {
+        "id": "inu4",
+        "text": "Yanis Aber PO/账户更新",
+        "source": "邮件",
+        "line": "KSL"
+      },
+      {
+        "id": "inu5",
+        "text": "Ida 墨西哥 DA 报价待审",
         "source": "邮件",
         "line": "KSL"
       },
@@ -214,7 +289,7 @@
       "line": "KSL"
     }
   ],
-  "scanNote": "Richpeace exmail session expired; inbox unreplied scan pending re-login | Richpeace: exmail session_timeout; unreplied not rescanned",
+  "scanNote": "KSL 9/20 full unreplied: Yanis Aber (not CILLA) + Joyce PI + Ida Mexico DA + PSR Bangert | Richpeace: exmail session_timeout",
   "lastBoard": {
     "at": "2026-09-19 10:25 +08",
     "choices": "1c,2c,3b,4c",
