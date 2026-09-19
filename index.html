@@ -118,9 +118,8 @@ function summary(){
 }
 function renderDecide(){
   const box=document.getElementById('p-decide'); const m=loadC(); const tmap=loadT(); const list=(data.decisions||[]).filter(passLine);
-  const sum=list.length?`<div class="card summary">当前选择：<b>${esc(summary())}</b><br/>每项含事情概要与备注出处/时间，便于判断。</div>`:'';
   if(!list.length){box.innerHTML='<div class="card"><div class="empty">今日无需拍板</div></div>';return}
-  box.innerHTML=sum+`<div class="sec"><span>⚡ 拍板</span><span>${list.length}</span></div>`+list.map((d,i)=>{
+  box.innerHTML=`<div class="sec"><span>⚡ 拍板</span><span>${list.length}</span></div>`+list.map((d,i)=>{
     const cur=m[d.id]||''; const oLet=otherLetter(d);
     const opts=(d.options||[]).map((o,oi)=>{
       const letter=letterAt(oi);
