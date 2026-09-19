@@ -1,7 +1,7 @@
 {
   "date": "2026-09-20",
   "title": "MD Dashboard V1.1",
-  "updatedAt": "2026-09-20T02:20:00+08:00",
+  "updatedAt": "2026-09-20T02:26:00+08:00",
   "lines": [
     "全部",
     "KSL",
@@ -12,9 +12,9 @@
       "id": "d4",
       "text": "Yanis Aber / Forvia：PO 是否已放行与账户未决事项",
       "context": "发件线为 Forvia（美洲 Commodity Manager Yanis Aber 起头；最新 9/19 回复来自 Sulejman Cilla）。对方要 Justin 内部核实：此前卡住发货/报价/维修服务的采购订单是否已真正放行，并给出状态。关键机头 557-00004、562-00018 已在 KSL 备妥待发。卡点：此前 KSL 因缺少已完成服务/零件/维修对应 PO，服务与出货被挂起；无 PO 则无法放货、出新报价或接新服务。无硬性截止日期，对方要求 ASAP 更新。",
-      "note": "拍板关注：是否已放行 PO；若未放行谁负责补单；能否回复 Forvia 可发货时间。",
-      "noteSource": "KSL秘书重读邮件",
-      "noteAt": "2026-09-20 02:20 +08",
+      "note": "已选 C 先搁置；可改。",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "source": "邮件",
       "line": "KSL",
       "options": [
@@ -22,15 +22,16 @@
         "B 周一回",
         "C 先搁置",
         "D 其他…"
-      ]
+      ],
+      "chosen": "C"
     },
     {
       "id": "d5",
       "text": "Joyce / Richpeace：零件 PI 付款与债务确认函",
       "context": "发件人 Joyce Jiao（Richpeace 销售经理，供应商）；主送 Transmetall（Darekom/Marina），Justin 抄送。对方要会计周二备现支付本批零件款，并确认/签署债务确认函与付款计划（9/18 已提）。本批金额：零件 RMB 3,728 + 运费 RMB 1,500 = RMB 5,228（邮件称约 68,000 卢布）。附件含 Courier No.png、2026 parts signed.pdf、20260430 Richpeace parts Commercial invoice.pdf。线程历史还有更早逾期 PI（PIRPSP20251121RU / PIRPSP20251222RU），合计约 CNY 534,155，其中曾欠约 CNY 456,055；此前期限（7月底/8/14）及 8/17 保险索赔威胁均已过。卡点：款项未付 + 债务确认函/付款计划未签回。",
-      "note": "拍板关注：本批 5228 是否批付；历史大额欠款是否一并处理；谁签债务确认函。付款类须 Justin/幕僚长拍板，不代批。",
-      "noteSource": "KSL秘书重读邮件",
-      "noteAt": "2026-09-20 02:20 +08",
+      "note": "已选 D 内容知晓，不做批复",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "source": "邮件",
       "line": "KSL",
       "options": [
@@ -38,15 +39,17 @@
         "B 交财务周一",
         "C 先搁置",
         "D 其他…"
-      ]
+      ],
+      "chosen": "D",
+      "otherText": "内容知晓，不做批复"
     },
     {
       "id": "d6",
       "text": "Ida / Richpeace：墨西哥 DA 设备价格表审阅",
       "context": "发件人 Ida Wang（Richpeace 销售经理，设备供应商），直接给 Justin。对方请 Justin 审阅附件《2026.09.18富怡设备价格表-给DA.xlsx》，并在向墨西哥 DA 客户报价前先摸清客户需求。Richpeace 提醒：TIER1 不宜直接按表报价（通常有特殊要求）；TIER2 及以下一般可直接报价，但仍建议先核对需求。邮件未写死金额数字或交期。卡点：缺墨西哥 DA 的客户特定需求确认，尤其 TIER1。",
-      "note": "拍板关注：亲自审表还是交 Richpeace秘书起草口径；是否允许按 TIER2 口径报价；出差前是否回复。",
-      "noteSource": "KSL秘书重读邮件",
-      "noteAt": "2026-09-20 02:20 +08",
+      "note": "已选 D 已经通过电话，Ida自行处理",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "source": "邮件",
       "line": "KSL",
       "options": [
@@ -54,7 +57,9 @@
         "B 交Richpeace秘书",
         "C 出差后再说",
         "D 其他…"
-      ]
+      ],
+      "chosen": "D",
+      "otherText": "已经通过电话，Ida自行处理"
     },
     {
       "id": "d1",
@@ -63,8 +68,8 @@
       "source": "邮件",
       "line": "KSL",
       "note": "已选 C 出差后再说；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "options": [
         "A 按9天确认",
         "B 改14天报价",
@@ -80,8 +85,8 @@
       "source": "邮件/Teams",
       "line": "KSL",
       "note": "已选 C 先搁置；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "options": [
         "A 今日处理",
         "B 返程后周一",
@@ -96,24 +101,24 @@
       "context": "外部申请需先验发件人/附件再定是否推进。",
       "source": "邮件",
       "line": "KSL",
-      "note": "已选 B 先搁置；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
+      "note": "已选 C 不做；可改。",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "options": [
         "A 继续推进",
         "B 先搁置",
         "C 不做",
         "D 其他…"
       ],
-      "chosen": "B"
+      "chosen": "C"
     },
     {
       "id": "d7",
       "text": "Melanie Bangert：PSR 数据逾期未交",
       "context": "发件人 Melanie Bangert（KSL/PFAFF 管理助理，内部 PSR 月报协调）。要求各部门用 Vorlage_PSR.pptx，于 2026-09-14 10:00 前提交。Justin 负责 Finanzen（与 Patrick Müller）及 Vertrieb/Sales（与 Guido Jaeger）；Guido 另负责开发与项目状态。卡点：截至 9/20 仍未见 Justin 侧提交/回复，已超过原定 9/14 节点；Bangert 休假信息此前记到 9/25，但逾期事实仍在。",
-      "note": "拍板关注：周一是否补交 Finanzen/Vertrieb；是否交 Patrick 先出财务部分；或继续搁置并说明原因。",
-      "noteSource": "KSL秘书重读邮件",
-      "noteAt": "2026-09-20 02:20 +08",
+      "note": "已选 A 周一补交；可改。",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "source": "邮件",
       "line": "KSL",
       "options": [
@@ -121,7 +126,8 @@
         "B 继续搁置",
         "C 交Patrick先跟财务",
         "D 其他…"
-      ]
+      ],
+      "chosen": "A"
     },
     {
       "id": "r1",
@@ -130,8 +136,8 @@
       "source": "交接/邮件",
       "line": "Richpeace",
       "note": "已选 C 继续搁置；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19",
+      "noteSource": "Justin 拍板（粘贴确认）",
+      "noteAt": "2026-09-20 02:26 +08",
       "options": [
         "A 回来立刻重启",
         "B 指定日期再议",
@@ -145,13 +151,13 @@
     "iu": [
       {
         "id": "iu1",
-        "text": "Joyce PI payment 待处理",
+        "text": "Joyce PI — 知晓不做批复",
         "source": "邮件",
         "line": "KSL"
       },
       {
         "id": "iu2",
-        "text": "PSR Bangert 逾期",
+        "text": "PSR Bangert — 周一补交",
         "source": "邮件",
         "line": "KSL"
       }
@@ -177,19 +183,19 @@
       },
       {
         "id": "inu4",
-        "text": "Yanis Aber PO/账户更新",
+        "text": "Yanis Aber PO/账户 — 先搁置",
         "source": "邮件",
         "line": "KSL"
       },
       {
         "id": "inu5",
-        "text": "Ida 墨西哥 DA 报价待审",
+        "text": "Ida 墨西哥 DA — 电话后 Ida 自行处理",
         "source": "邮件",
         "line": "KSL"
       },
       {
         "id": "rinu1",
-        "text": "多针/Ida：补技术细节或改 LR15 口径",
+        "text": "Ida 墨西哥 DA — 电话后 Ida 自行处理",
         "context": "Ida 9/3 称缺 Justin 细节；双锁式+多针近 LR15 非标配；未见已回",
         "note": "4C 继续搁置；出差前不外发",
         "noteSource": "Justin批示",
@@ -291,9 +297,19 @@
   ],
   "scanNote": "KSL 9/20 full unreplied: Yanis Aber (not CILLA) + Joyce PI + Ida Mexico DA + PSR Bangert | Richpeace: exmail session_timeout | d4–d7 context enriched 02:20",
   "lastBoard": {
-    "at": "2026-09-19 10:25 +08",
-    "choices": "1c,2c,3b,4c",
-    "via": "chat-paste+KSL sync"
+    "at": "2026-09-20 02:26 +08",
+    "choices": "1c,2d,3d,4c,5c,6c,7a,8c",
+    "via": "chat-paste",
+    "detail": {
+      "d4": "C 先搁置",
+      "d5": "D 内容知晓，不做批复",
+      "d6": "D 电话沟通，Ida自行处理",
+      "d1": "C 出差后再说",
+      "d2": "C 先搁置",
+      "d3": "C 不做",
+      "d7": "A 周一补交",
+      "r1": "C 继续搁置"
+    }
   },
   "version": "1.1"
 }
