@@ -11,58 +11,46 @@
 <link rel="apple-touch-icon" href="icons/icon.svg"/>
 <title>MD 快捷台</title>
 <style>
-:root{
-  --bg:#070B14;--card:#121A2B;--card2:#1A2438;--line:#243049;
-  --text:#F3F4F6;--muted:#9CA3AF;--blue:#3B82F6;--red:#EF4444;
-  --orange:#F59E0B;--yellow:#EAB308;--green:#22C55E;
-  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);
-}
+:root{--bg:#070B14;--card:#121A2B;--card2:#1A2438;--line:#243049;--text:#F3F4F6;--muted:#9CA3AF;--blue:#3B82F6;--green:#22C55E;
+--safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;
-  min-height:100%}
-body{padding:calc(10px + var(--safe-t)) 12px calc(78px + var(--safe-b))}
-header{position:sticky;top:0;z-index:5;padding:6px 2px 10px;
-  background:linear-gradient(180deg,rgba(7,11,20,.98),rgba(7,11,20,.88) 75%,transparent)}
-.h1{font-size:22px;font-weight:800;margin:0;letter-spacing:-.02em}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;min-height:100%}
+body{padding:calc(10px + var(--safe-t)) 12px calc(96px + var(--safe-b))}
+header{position:sticky;top:0;z-index:5;padding:6px 2px 10px;background:linear-gradient(180deg,rgba(7,11,20,.98),rgba(7,11,20,.85) 80%,transparent)}
+.h1{font-size:22px;font-weight:800;margin:0}
 .sub{color:var(--muted);font-size:12px;margin-top:4px}
-.tabs{display:flex;gap:8px;margin-top:12px}
-.tab{flex:1;border:1px solid var(--line);background:transparent;color:var(--muted);
-  border-radius:12px;padding:10px 0;font-size:13px;font-weight:700}
+.tabs{display:flex;gap:8px;margin-top:12px;overflow-x:auto}
+.tab{flex:1;min-width:56px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:12px;padding:10px 0;font-size:13px;font-weight:700}
 .tab.on{background:#1E3A8A;border-color:#2563EB;color:#fff}
 .panel{display:none}.panel.on{display:block}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:10px 0;overflow:hidden}
 .sec{font-size:12px;font-weight:700;color:var(--muted);margin:14px 2px 6px;display:flex;justify-content:space-between}
-.item{padding:14px;border-top:1px solid var(--line)}
-.item:first-child{border-top:0}
+.item{padding:14px;border-top:1px solid var(--line)}.item:first-child{border-top:0}
 .title{font-size:15px;font-weight:650;line-height:1.35}
 .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .tag{font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;background:#1F2937;color:var(--muted)}
-.tag.ksl{background:#172554;color:#93C5FD}
-.tag.rp{background:#3B0764;color:#E9D5FF}
+.tag.ksl{background:#172554;color:#93C5FD}.tag.rp{background:#3B0764;color:#E9D5FF}
 .opts{display:flex;flex-direction:column;gap:8px;margin-top:10px}
-.opt{border:1px solid var(--line);background:var(--card2);color:var(--text);
-  border-radius:12px;padding:11px 12px;text-align:left;font-size:13px;font-weight:600}
+.opt{border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:12px;padding:12px;text-align:left;font-size:14px;font-weight:600}
 .opt.on{background:#14532D;border-color:#22C55E}
-.opt:active{opacity:.85}
+.other-box{display:none;margin-top:8px}
+.other-box.show{display:block}
+.field{width:100%;border:1px solid var(--line);background:#0B1220;color:var(--text);border-radius:12px;padding:12px;font-size:14px}
 .row{display:flex;gap:10px;align-items:flex-start}
 .check{width:22px;height:22px;border-radius:7px;border:2px solid #6B7280;flex:0 0 auto;margin-top:1px;display:grid;place-items:center}
-.done .check{background:var(--green);border-color:var(--green)}
-.done .check::after{content:"✓";color:#052e16;font-weight:800;font-size:12px}
+.done .check{background:var(--green);border-color:var(--green)}.done .check::after{content:"✓";color:#052e16;font-weight:800;font-size:12px}
 .done .title{opacity:.45;text-decoration:line-through}
 .qhead{padding:12px 14px 0;font-size:14px;font-weight:800}
 .empty{padding:14px;color:var(--muted);font-size:14px}
 .when{font-size:12px;color:var(--blue);font-weight:700;margin-bottom:4px}
 .hint{color:var(--muted);font-size:12px;line-height:1.45;margin:8px 2px}
-.toast{position:fixed;left:50%;bottom:calc(86px + var(--safe-b));transform:translateX(-50%);
-  background:#111827;border:1px solid var(--line);padding:10px 14px;border-radius:12px;
-  font-size:13px;opacity:0;transition:.2s;pointer-events:none;z-index:20;white-space:nowrap}
-.toast.show{opacity:1}
-.bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + var(--safe-b));
-  background:rgba(7,11,20,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);
-  display:flex;gap:8px}
-.btn{flex:1;border:0;border-radius:12px;padding:12px;background:var(--card2);color:var(--text);font-weight:700;font-size:13px}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + var(--safe-b));background:rgba(7,11,20,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;gap:8px}
+.btn{flex:1;border:0;border-radius:12px;padding:13px;background:var(--card2);color:var(--text);font-weight:700;font-size:13px}
 .btn.primary{background:var(--blue)}
+.toast{position:fixed;left:50%;bottom:calc(100px + var(--safe-b));transform:translateX(-50%);background:#111827;border:1px solid var(--line);padding:10px 14px;border-radius:12px;font-size:13px;opacity:0;transition:.2s;pointer-events:none;z-index:20;white-space:nowrap}
+.toast.show{opacity:1}
+.summary{padding:12px 14px;font-size:13px;color:var(--muted)}
+.summary b{color:var(--text)}
 </style>
 </head>
 <body>
@@ -73,111 +61,162 @@ header{position:sticky;top:0;z-index:5;padding:6px 2px 10px;
     <button class="tab on" data-p="decide" type="button">拍板</button>
     <button class="tab" data-p="todo" type="button">待办</button>
     <button class="tab" data-p="cal" type="button">日程</button>
+    <button class="tab" data-p="set" type="button">设置</button>
   </div>
 </header>
-
 <section class="panel on" id="p-decide"></section>
 <section class="panel" id="p-todo"></section>
 <section class="panel" id="p-cal"></section>
-<p class="hint">Safari → 分享 →「添加到主屏幕」。选项点选只保存在本机；外发邮件仍须你确认。</p>
+<section class="panel" id="p-set">
+  <div class="sec"><span>同步到幕僚长</span></div>
+  <div class="card item">
+    <div class="title">Webhook 地址（只需贴一次）</div>
+    <p class="hint">打开例行任务「MD拍板同步」→ 复制 Webhook URL → 粘贴保存。也可点：[Webhook URL](grokbot://app/v1/sidebar?target=webhook-url&automation=md)</p>
+    <input class="field" id="webhookUrl" type="url" placeholder="https://… webhook …" autocomplete="off"/>
+    <button class="btn primary" id="btnSaveHook" type="button" style="margin-top:10px;width:100%">保存地址</button>
+  </div>
+</section>
 <div class="bar">
-  <button class="btn" id="btnReset" type="button">清除本机选择</button>
-  <button class="btn primary" id="btnCopy" type="button">复制回复串</button>
+  <button class="btn" id="btnClear" type="button">清除选择</button>
+  <button class="btn primary" id="btnSubmit" type="button">提交拍板</button>
 </div>
 <div class="toast" id="toast"></div>
 <script>
-const EMBEDDED = {"date": "2026-09-19", "title": "MD 快捷台", "updatedAt": "2026-09-19T08:10:00+08:00", "decisions": [{"id": "d1", "text": "Joachim 搬迁：9天档期确认（邮件你自己改，不代发）", "source": "邮件", "line": "KSL", "status": "yellow", "options": ["A 按9天确认", "B 改14天报价", "C 出差后再说"], "chosen": "A"}, {"id": "d2", "text": "Patrick 8月财务上传 + CPCONS", "source": "邮件/Teams", "line": "KSL", "status": "yellow", "options": ["A 今日处理", "B 返程后周一", "C 先搁置"], "chosen": "B"}, {"id": "d3", "text": "ekom21 申请 26.5214", "source": "邮件", "line": "KSL", "status": "green", "options": ["A 继续推进", "B 先搁置", "C 不做"], "chosen": "C"}], "quadrants": {"iu": [{"id": "iu1", "text": "SQ 值机 — 已完成关闭", "source": "邮件", "line": "KSL", "done": true}, {"id": "iu2", "text": "Patrick 财务 — 返程后周一", "source": "邮件", "line": "KSL"}], "inu": [{"id": "inu1", "text": "盯 9/23 股东会 + PSR（6月格式）", "source": "Teams", "line": "KSL"}, {"id": "inu2", "text": "Frank：周一对齐股东会新幻灯片", "source": "Teams", "line": "KSL"}, {"id": "inu3", "text": "Richpeace 三条口径 — 出差后再说", "source": "交接", "line": "Richpeace"}], "niu": [], "ninu": []}, "calendar": [{"id": "c1", "when": "9/21 一 11:00–12:00", "text": "Management Meeting KSL", "where": "Besprechungsraum 2. OG", "who": "Frank / Guido / Joachim / Carolin / 你"}, {"id": "c2", "when": "9/21 一 13:30–14:30", "text": "Sales meeting", "where": "", "who": ""}, {"id": "c3", "when": "9/22–25", "text": "2026汉堡国际风能展（全天）", "where": "", "who": ""}, {"id": "c4", "when": "9/23 三 03:30–11:30", "text": "智能制造事业部产销研（百福上海、上工富怡）", "where": "注意时区", "who": ""}, {"id": "c5", "when": "9/28 一 11:00–12:00", "text": "Management Meeting KSL", "where": "Besprechungsraum 2. OG", "who": ""}, {"id": "c6", "when": "9/28 一 13:30–14:30", "text": "Sales meeting", "where": "", "who": ""}, {"id": "c7", "when": "9/30 三 13:00–14:00", "text": "same girl friend of Guido", "where": "", "who": ""}]};
-const KEY_CHOICE = 'md-console-choices-v1';
-const KEY_DONE = 'md-console-done-v1';
-let data = EMBEDDED;
-let tab = 'decide';
-
-function toast(m){const el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>el.classList.remove('show'),1500)}
-function loadChoices(){try{return JSON.parse(localStorage.getItem(KEY_CHOICE)||'{}')}catch{return{}}}
-function saveChoices(m){localStorage.setItem(KEY_CHOICE,JSON.stringify(m))}
-function loadDone(){try{return JSON.parse(localStorage.getItem(KEY_DONE)||'{}')}catch{return{}}}
-function saveDone(m){localStorage.setItem(KEY_DONE,JSON.stringify(m))}
+const DATA = {"date": "2026-09-19", "title": "MD 快捷台", "updatedAt": "2026-09-19T08:10:00+08:00", "decisions": [{"id": "d1", "text": "Joachim 搬迁：9天档期确认（邮件你自己改，不代发）", "source": "邮件", "line": "KSL", "status": "yellow", "options": ["A 按9天确认", "B 改14天报价", "C 出差后再说", "D 其他…"], "chosen": "A"}, {"id": "d2", "text": "Patrick 8月财务上传 + CPCONS", "source": "邮件/Teams", "line": "KSL", "status": "yellow", "options": ["A 今日处理", "B 返程后周一", "C 先搁置", "D 其他…"], "chosen": "B"}, {"id": "d3", "text": "ekom21 申请 26.5214", "source": "邮件", "line": "KSL", "status": "green", "options": ["A 继续推进", "B 先搁置", "C 不做", "D 其他…"], "chosen": "C"}], "quadrants": {"iu": [{"id": "iu1", "text": "SQ 值机 — 已完成关闭", "source": "邮件", "line": "KSL", "done": true}, {"id": "iu2", "text": "Patrick 财务 — 返程后周一", "source": "邮件", "line": "KSL"}], "inu": [{"id": "inu1", "text": "盯 9/23 股东会 + PSR（6月格式）", "source": "Teams", "line": "KSL"}, {"id": "inu2", "text": "Frank：周一对齐股东会新幻灯片", "source": "Teams", "line": "KSL"}, {"id": "inu3", "text": "Richpeace 三条口径 — 出差后再说", "source": "交接", "line": "Richpeace"}], "niu": [], "ninu": []}, "calendar": [{"id": "c1", "when": "9/21 一 11:00–12:00", "text": "Management Meeting KSL", "where": "Besprechungsraum 2. OG", "who": "Frank / Guido / Joachim / Carolin / 你"}, {"id": "c2", "when": "9/21 一 13:30–14:30", "text": "Sales meeting", "where": "", "who": ""}, {"id": "c3", "when": "9/22–25", "text": "2026汉堡国际风能展（全天）", "where": "", "who": ""}, {"id": "c4", "when": "9/23 三 03:30–11:30", "text": "智能制造事业部产销研（百福上海、上工富怡）", "where": "注意时区", "who": ""}, {"id": "c5", "when": "9/28 一 11:00–12:00", "text": "Management Meeting KSL", "where": "Besprechungsraum 2. OG", "who": ""}, {"id": "c6", "when": "9/28 一 13:30–14:30", "text": "Sales meeting", "where": "", "who": ""}, {"id": "c7", "when": "9/30 三 13:00–14:00", "text": "same girl friend of Guido", "where": "", "who": ""}]};
+const KEY_C='md-console-choices-v3', KEY_T='md-console-other-text-v3', KEY_D='md-console-done-v3', KEY_W='md-console-webhook-v1';
+let tab='decide', data=DATA;
+function toast(m){const el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>el.classList.remove('show'),1800)}
+function loadC(){try{return JSON.parse(localStorage.getItem(KEY_C)||'{}')}catch{return{}}}
+function saveC(m){localStorage.setItem(KEY_C,JSON.stringify(m))}
+function loadT(){try{return JSON.parse(localStorage.getItem(KEY_T)||'{}')}catch{return{}}}
+function saveT(m){localStorage.setItem(KEY_T,JSON.stringify(m))}
+function loadD(){try{return JSON.parse(localStorage.getItem(KEY_D)||'{}')}catch{return{}}}
+function saveD(m){localStorage.setItem(KEY_D,JSON.stringify(m))}
 function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function lineTag(line){return line==='KSL'?'ksl':'rp'}
-
-function renderDecide(){
-  const box=document.getElementById('p-decide');
-  const choices=loadChoices();
-  const list=data.decisions||[];
-  if(!list.length){box.innerHTML='<div class="card"><div class="empty">今日无需拍板</div></div>';return}
-  box.innerHTML = `<div class="sec"><span>⚡ 今日需拍板</span><span>${list.length}</span></div>` +
-    list.map((d,i)=>{
-      const cur = choices[d.id] || d.chosen || '';
-      const opts=(d.options||['A','B','C']).map((o,oi)=>{
-        const letter = String.fromCharCode(65+oi);
-        const on = cur===letter || cur.startsWith(letter) ? ' on':'';
-        return `<button class="opt${on}" data-id="${esc(d.id)}" data-letter="${letter}" type="button">${esc(o)}</button>`;
-      }).join('');
-      return `<div class="card item"><div class="title">${i+1}. ${esc(d.text)}</div>
-        <div class="meta"><span class="tag ${lineTag(d.line)}">${esc(d.line)}</span><span class="tag">${esc(d.source)}</span></div>
-        <div class="opts">${opts}</div></div>`;
-    }).join('');
+function lineTag(l){return l==='KSL'?'ksl':'rp'}
+function isOtherOption(o){return /其他/.test(o)}
+function letterOf(opts, idx){return String.fromCharCode(65+idx)}
+function otherLetter(d){
+  const opts=d.options||[];
+  for(let i=0;i<opts.length;i++){if(isOtherOption(opts[i])) return letterOf(opts,i)}
+  return null;
 }
-
+function labelFor(d, letter, otherText){
+  const opts=d.options||[];
+  const idx=letter.charCodeAt(0)-65;
+  const o=opts[idx]||letter;
+  if(isOtherOption(o)) return otherText?`其他：${otherText}`:'其他（未填）';
+  return o;
+}
+function choiceSummary(){
+  const m=loadC(), t=loadT(), list=data.decisions||[];
+  return list.map((d,i)=>{
+    const L=(m[d.id]||'?');
+    return `${i+1}${String(L).toLowerCase()}（${labelFor(d,L,t[d.id]||'')}）`;
+  }).join('；');
+}
+function renderDecide(){
+  const box=document.getElementById('p-decide'); const m=loadC(); const tmap=loadT(); const list=data.decisions||[];
+  const sum=list.length?`<div class="card summary">当前选择：<b>${esc(choiceSummary())}</b><br/>可点「其他」并输入说明，再提交拍板。</div>`:'';
+  if(!list.length){box.innerHTML='<div class="card"><div class="empty">今日无需拍板</div></div>';return}
+  box.innerHTML=sum+`<div class="sec"><span>⚡ 点选即可</span><span>${list.length}</span></div>`+list.map((d,i)=>{
+    const cur=m[d.id]||'';
+    const oLet=otherLetter(d);
+    const opts=(d.options||[]).map((o,oi)=>{
+      const letter=letterOf(d.options,oi);
+      return `<button class="opt${cur===letter?' on':''}" data-id="${esc(d.id)}" data-letter="${letter}" data-other="${isOtherOption(o)?'1':'0'}" type="button">${esc(o)}</button>`;
+    }).join('');
+    const showOther = cur && oLet && cur===oLet;
+    return `<div class="card item"><div class="title">${i+1}. ${esc(d.text)}</div>
+      <div class="meta"><span class="tag ${lineTag(d.line)}">${esc(d.line)}</span><span class="tag">${esc(d.source)}</span></div>
+      <div class="opts">${opts}</div>
+      <div class="other-box${showOther?' show':''}" data-other-for="${esc(d.id)}">
+        <input class="field" data-other-input="${esc(d.id)}" type="text" placeholder="请输入其他说明…" value="${esc(tmap[d.id]||'')}"/>
+      </div></div>`;
+  }).join('');
+}
 function renderTodo(){
-  const box=document.getElementById('p-todo');
-  const done=loadDone();
-  const q=data.quadrants||{};
-  const blocks=[
-    ['iu','🔴 重要且紧急'],
-    ['inu','🟠 重要不紧急'],
-    ['niu','🟡 不重要但紧急'],
-    ['ninu','⚪ 不重要不紧急']
-  ];
-  box.innerHTML = blocks.map(([k,label])=>{
+  const box=document.getElementById('p-todo'); const done=loadD(); const q=data.quadrants||{};
+  box.innerHTML=[['iu','🔴 重要且紧急'],['inu','🟠 重要不紧急'],['niu','🟡 不重要但紧急'],['ninu','⚪ 不重要不紧急']].map(([k,label])=>{
     const items=q[k]||[];
-    const body = items.length ? items.map(it=>{
-      const isDone = !!done[it.id] || !!it.done;
-      return `<div class="item row${isDone?' done':''}" data-todo="${esc(it.id)}">
-        <div class="check"></div>
-        <div><div class="title">${esc(it.text)}</div>
-        <div class="meta"><span class="tag ${lineTag(it.line)}">${esc(it.line)}</span><span class="tag">${esc(it.source)}</span></div></div>
-      </div>`;
-    }).join('') : `<div class="empty">无</div>`;
+    const body=items.length?items.map(it=>{
+      const isDone=!!done[it.id]||!!it.done;
+      return `<div class="item row${isDone?' done':''}" data-todo="${esc(it.id)}"><div class="check"></div><div><div class="title">${esc(it.text)}</div>
+        <div class="meta"><span class="tag ${lineTag(it.line)}">${esc(it.line)}</span><span class="tag">${esc(it.source)}</span></div></div></div>`;
+    }).join(''):`<div class="empty">无</div>`;
     return `<div class="card"><div class="qhead">${label}</div>${body}</div>`;
   }).join('');
 }
-
 function renderCal(){
-  const box=document.getElementById('p-cal');
-  const list=data.calendar||[];
+  const box=document.getElementById('p-cal'); const list=data.calendar||[];
   if(!list.length){box.innerHTML='<div class="card"><div class="empty">近几日无日程</div></div>';return}
-  box.innerHTML = `<div class="sec"><span>📅 近几日日程</span><span>${list.length}</span></div><div class="card">` +
+  box.innerHTML=`<div class="sec"><span>📅 近几日日程</span><span>${list.length}</span></div><div class="card">`+
     list.map(c=>`<div class="item"><div class="when">${esc(c.when)}</div><div class="title">${esc(c.text)}</div>
-      <div class="meta">${c.where?`<span class="tag">${esc(c.where)}</span>`:''}${c.who?`<span class="tag">${esc(c.who)}</span>`:''}</div></div>`).join('') +
-    `</div>`;
+      <div class="meta">${c.where?`<span class="tag">${esc(c.where)}</span>`:''}${c.who?`<span class="tag">${esc(c.who)}</span>`:''}</div></div>`).join('')+`</div>`;
 }
-
 function render(){
   document.getElementById('h1').textContent=data.title||'MD 快捷台';
-  document.getElementById('sub').textContent=`${data.date||''} · 更新 ${data.updatedAt||''}`;
+  document.getElementById('sub').textContent=`${data.date||''} · 支持「其他」自由输入`;
+  document.getElementById('webhookUrl').value=localStorage.getItem(KEY_W)||'';
   renderDecide(); renderTodo(); renderCal();
-  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on', p.id==='p-'+tab));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t.dataset.p===tab));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+tab));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.p===tab));
 }
-
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{tab=t.dataset.p;render()}));
 document.body.addEventListener('click',e=>{
   const opt=e.target.closest('.opt');
   if(opt){
-    const m=loadChoices(); m[opt.dataset.id]=opt.dataset.letter; saveChoices(m); render(); toast('已选 '+opt.dataset.letter); return;
+    const m=loadC(); m[opt.dataset.id]=opt.dataset.letter; saveC(m);
+    render();
+    if(opt.dataset.other==='1'){
+      const inp=document.querySelector(`[data-other-input="${opt.dataset.id}"]`);
+      if(inp){inp.focus()}
+    }
+    toast('已选 '+opt.dataset.letter); return;
   }
   const todo=e.target.closest('[data-todo]');
-  if(todo){
-    const m=loadDone(); const id=todo.dataset.todo;
-    if(m[id]) delete m[id]; else m[id]=Date.now(); saveDone(m); render();
-  }
+  if(todo){const m=loadD();const id=todo.dataset.todo;if(m[id])delete m[id];else m[id]=Date.now();saveD(m);render()}
 });
-document.getElementById('btnReset').onclick=()=>{localStorage.removeItem(KEY_CHOICE);localStorage.removeItem(KEY_DONE);render();toast('已清除')};
-document.getElementById('btnCopy').onclick=()=>{
-  const m=loadChoices(); const list=data.decisions||[];
-  const s=list.map((d,i)=>`${i+1}${(m[d.id]||d.chosen||'?').toLowerCase()}`).join(',');
-  navigator.clipboard.writeText(s).then(()=>toast('已复制 '+s)).catch(()=>toast(s));
+document.body.addEventListener('input',e=>{
+  const inp=e.target.closest('[data-other-input]');
+  if(!inp) return;
+  const m=loadT(); m[inp.getAttribute('data-other-input')]=inp.value; saveT(m);
+});
+document.getElementById('btnSaveHook').onclick=()=>{
+  const v=document.getElementById('webhookUrl').value.trim();
+  localStorage.setItem(KEY_W,v); toast(v?'Webhook 已保存':'已清空');
+};
+document.getElementById('btnClear').onclick=()=>{localStorage.removeItem(KEY_C);localStorage.removeItem(KEY_T);render();toast('已清除选择')};
+document.getElementById('btnSubmit').onclick=async()=>{
+  const hook=localStorage.getItem(KEY_W)||'';
+  const m=loadC(), tmap=loadT(), list=data.decisions||[];
+  if(list.some(d=>!(m[d.id]))){toast('还有未选项');return}
+  for(const d of list){
+    const ol=otherLetter(d);
+    if(ol && m[d.id]===ol && !(tmap[d.id]||'').trim()){toast('请填写「其他」内容');return}
+  }
+  const payload={
+    source:'md-console',
+    date:data.date,
+    summary:choiceSummary(),
+    compact:list.map((d,i)=>`${i+1}${m[d.id].toLowerCase()}`).join(','),
+    decisions:list.map((d,i)=>({
+      n:i+1, id:d.id, text:d.text, choice:m[d.id],
+      label:labelFor(d,m[d.id],tmap[d.id]||''),
+      otherText: (otherLetter(d)===m[d.id]) ? (tmap[d.id]||'') : ''
+    }))
+  };
+  if(!hook){
+    try{await navigator.clipboard.writeText(payload.summary)}catch{}
+    toast('未配置 Webhook，已复制摘要'); tab='set'; render(); return;
+  }
+  try{
+    await fetch(hook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),mode:'cors'});
+    toast('已提交给幕僚长');
+  }catch(err){
+    try{await navigator.clipboard.writeText(payload.summary)}catch{}
+    toast('提交失败，已复制摘要');
+  }
 };
 render();
 </script>
