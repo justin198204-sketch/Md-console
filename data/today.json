@@ -1,223 +1,224 @@
 {
-  "date": "2026-09-19",
-  "title": "MD Dashboard",
-  "updatedAt": "2026-09-19T10:25:00+08:00",
-  "lines": [
-    "全部",
-    "KSL",
-    "Richpeace"
-  ],
-  "decisions": [
-    {
-      "id": "d1",
-      "text": "Joachim 搬迁：档期确认",
-      "context": "Dual KSL CNC Sewing + Silicone 搬迁。报价按14天，确认窗口9天（2026-11-26～12-04）。确认信不代发。",
-      "source": "邮件",
-      "line": "KSL",
-      "note": "已选 C 出差后再说；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
-      "options": [
-        "A 按9天确认",
-        "B 改14天报价",
-        "C 出差后再说",
-        "D 其他…"
-      ],
-      "chosen": "C"
-    },
-    {
-      "id": "d2",
-      "text": "Patrick 8月财务上传 + CPCONS",
-      "context": "待核8月 BS/P&L/YTF 上传与 CPCONS；股东会+PSR约9/23需盯。",
-      "source": "邮件/Teams",
-      "line": "KSL",
-      "note": "已选 C 先搁置（覆盖原 2B 周一）；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
-      "options": [
-        "A 今日处理",
-        "B 返程后周一",
-        "C 先搁置",
-        "D 其他…"
-      ],
-      "chosen": "C"
-    },
-    {
-      "id": "d3",
-      "text": "ekom21 申请 26.5214",
-      "context": "外部申请需先验发件人/附件再定是否推进。",
-      "source": "邮件",
-      "line": "KSL",
-      "note": "已选 B 先搁置（覆盖原 3C 不做）；可改。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
-      "options": [
-        "A 继续推进",
-        "B 先搁置",
-        "C 不做",
-        "D 其他…"
-      ],
-      "chosen": "B"
-    },
-    {
-      "id": "r1",
-      "text": "Richpeace 三条跟进口径何时重启？",
-      "context": "多针细节、Adient 精度风险联合评估、Morocco 直订/售后边界。出差前搁置不外发。收件未回复待登录后补扫。",
-      "source": "交接/邮件",
-      "line": "Richpeace",
-      "note": "已选 C 继续搁置；出差前不外发。",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-09-19 10:25 +08",
-      "options": [
-        "A 回来立刻重启",
-        "B 指定日期再议",
-        "C 继续搁置",
-        "D 其他…"
-      ],
-      "chosen": "C"
-    }
-  ],
-  "quadrants": {
-    "iu": [
-      {
-        "id": "iu1",
-        "text": "SQ 值机 — 已完成关闭",
-        "source": "邮件",
-        "line": "KSL",
-        "done": true
-      },
-      {
-        "id": "iu2",
-        "text": "Patrick 财务 — 先搁置",
-        "source": "邮件",
-        "line": "KSL"
-      }
+    "date": "2026-09-19",
+    "title": "MD Dashboard V1.1",
+    "updatedAt": "2026-09-20T01:30:00+08:00",
+    "lines": [
+          "全部",
+          "KSL",
+          "Richpeace"
     ],
-    "inu": [
-      {
-        "id": "inu1",
-        "text": "盯 9/23 股东会 + PSR（6月格式）",
-        "source": "Teams",
-        "line": "KSL"
-      },
-      {
-        "id": "inu2",
-        "text": "Frank：周一对齐股东会新幻灯片",
-        "source": "Teams",
-        "line": "KSL"
-      },
-      {
-        "id": "inu3",
-        "text": "Joachim 搬迁 — 出差后再说（不发不催）",
-        "source": "邮件",
-        "line": "KSL"
-      },
-      {
-        "id": "rinu1",
-        "text": "多针/Ida：补技术细节或改 LR15 口径",
-        "context": "Ida 9/3 称缺 Justin 细节；双锁式+多针近 LR15 非标配；未见已回",
-        "note": "出差后再说；出差前不外发",
-        "noteSource": "Justin批示",
-        "noteAt": "2026-09-18",
-        "source": "邮件",
-        "line": "Richpeace"
-      },
-      {
-        "id": "rinu2",
-        "text": "Adient 自动化上下料：精度风险与技价交期",
-        "context": "定位±1mm/切割±3mm；场地约5.5×6.5m；产量约7000/16h；Ida评精度风险高",
-        "note": "出差后再说；出差前不外发",
-        "noteSource": "Justin批示",
-        "noteAt": "2026-09-18",
-        "source": "邮件",
-        "line": "Richpeace"
-      },
-      {
-        "id": "rinu3",
-        "text": "Morocco 刺绣+CNC：直订路径与报价确认",
-        "context": "4头600×700×4台约€121,640；含选项服务夹具约€164,140；Ida倾向Adient直订Richpeace；售后可由KSL",
-        "note": "出差后再说；出差前不外发",
-        "noteSource": "Justin批示",
-        "noteAt": "2026-09-18",
-        "source": "邮件",
-        "line": "Richpeace"
-      },
-      {
-        "id": "rinu4",
-        "text": "收件箱未回复扫描：待重新登录 exmail 后补扫",
-        "context": "网页会话已掉线，停在登录页；备份夹不扫",
-        "note": "登录恢复后更新 Dashboard",
-        "noteSource": "Richpeace秘书",
-        "noteAt": "2026-09-19 09:51 +08",
-        "source": "系统",
-        "line": "Richpeace"
-      }
+    "decisions": [
+          {
+                  "id": "d1",
+                  "text": "Joachim 搬迁：期认",
+                  "context": "Dual KSL CNC Sewing + Silicone 搬。报价按14天，认口9天2026-11-2612-04）。确认信不代。",
+                  "source": "邮件",
+                  "line": "KSL",
+                  "note": "已选 C 出差再说；可改。",
+                  "noteSource": "Justin 拍板",
+                  "noteAt": "2026-09-19 10:25 +08",
+                  "options": [
+                            "A 按9天确认",
+                            "B 改14报",
+                            "C 出差后再说",
+                            "D 其他…"
+                  ],
+                  "chosen": "C"
+          },
+          {
+                  "id": "d2",
+                  "text": "Patrick 8财务传 + CPCONS",
+                  "context": "待核8 BS/P&L/YTF 上传与 CPCONS；股东会+PSR约9/23需盯。",
+                  "source": "邮件/Teams",
+                  "line": "KSL",
+                  "note": "已选 C 搁置（覆盖原 2B 周一）；可改。",
+                  "noteSource": "Justin 拍板",
+                  "noteAt": "2026-09-19 10:25 +08",
+                  "options": [
+                            "A 今日处理",
+                            "B 返程后一",
+                            "C 先搁",
+                            "D 其他"
+                  ],
+                  "chosen": "C"
+          },
+          {
+                  "id": "d3",
+                  "text": "ekom21 申请 26.5214",
+                  "context": "外部先验件人/附再定是否推进。",
+                  "source": "邮",
+                  "line": "KSL",
+                  "note": "已选 B 先搁置覆原 3C 不做；可改。",
+                  "noteSource": "Justin 拍板",
+                  "noteAt": "2026-09-19 10:25 +08",
+                  "options": [
+                            "A 继续推进",
+                            "B 先搁置",
+                            "C 不",
+                            "D 其他…"
+                  ],
+                  "chosen": "B"
+          },
+          {
+                  "id": "r1",
+                  "text": "Richpeace 三条跟进何重启？",
+                  "context": "多细节Adient 精险联合评估Morocco 直订/售后边界。出差前搁置不外发。件未回复登录后补扫。",
+                  "source": "交接/邮",
+                  "line": "Richpeace",
+                  "note": "选 C 继续搁；出差前不外发。",
+                  "noteSource": "Justin 拍板",
+                  "noteAt": "2026-09-19 10:25 +08",
+                  "options": [
+                            "A 来刻重启",
+                            "B 指定日期再议",
+                            "C 继置",
+                            "D 他…"
+                  ],
+                  "chosen": "C"
+          }
     ],
-    "niu": [],
-    "ninu": []
-  },
-  "calendar": [
-    {
-      "id": "c1",
-      "when": "9/21 一 11:00–12:00",
-      "text": "Management Meeting KSL",
-      "where": "Besprechungsraum 2. OG",
-      "who": "Frank / Guido / Joachim / Carolin / 你",
-      "line": "KSL"
+    "quadrants": {
+          "iu": [
+                  {
+                            "id": "iu1",
+                            "text": "SQ 机 — 已完成关闭",
+                            "source": "件",
+                            "line": "KSL",
+                            "done": true
+                  },
+                  {
+                            "id": "iu2",
+                            "text": "Patrick 务 — 先搁置",
+                            "source": "邮件",
+                            "line": "KSL"
+                  }
+          ],
+          "inu": [
+                  {
+                            "id": "inu1",
+                            "text": " 9/23 股东会 + PSR（6月格式）",
+                            "source": "Teams",
+                            "line": "KSL"
+                  },
+                  {
+                            "id": "inu2",
+                            "text": "Frank：周一股会新幻灯片",
+                            "source": "Teams",
+                            "line": "KSL"
+                  },
+                  {
+                            "id": "inu3",
+                            "text": "Joachim 迁 — 出差后再说（不发不催",
+                            "source": "件",
+                            "line": "KSL"
+                  },
+                  {
+                            "id": "rinu1",
+                            "text": "多/Ida：补技术节或 LR15 口径",
+                            "context": "Ida 9/3 称 Justin 细节双锁式+多针近 LR15 标；未见已回",
+                            "note": "出差后再；出差前不发",
+                            "noteSource": "Justin批示",
+                            "noteAt": "2026-09-18",
+                            "source": "邮件",
+                            "line": "Richpeace"
+                  },
+                  {
+                            "id": "rinu2",
+                            "text": "Adient 自化上下料：风与技价交期",
+                            "context": "定位±1mm/±3mm；场地约5.5×6.5m；产量约7000/16h；Ida精度险高",
+                            "note": "出差后再；出差不外发",
+                            "noteSource": "Justin批",
+                            "noteAt": "2026-09-18",
+                            "source": "邮",
+                            "line": "Richpeace"
+                  },
+                  {
+                            "id": "rinu3",
+                            "text": "Morocco 刺+CNC：直订路径与报价确认",
+                            "context": "4头600×700×4台约€121,640含项服务夹具约€164,140；Ida倾向Adient直订Richpeace；售可KSL",
+                            "note": "出差后再说；出差前不外发",
+                            "noteSource": "Justin批示",
+                            "noteAt": "2026-09-18",
+                            "source": "件",
+                            "line": "Richpeace"
+                  },
+                  {
+                            "id": "rinu4",
+                            "text": "收箱回复描：待重新登录 exmail 后补扫",
+                            "context": "页会话已掉线，在登录页；扫",
+                            "note": "登录恢后更新 Dashboard",
+                            "noteSource": "Richpeace秘书",
+                            "noteAt": "2026-09-19 09:51 +08",
+                            "source": "系统",
+                            "line": "Richpeace"
+                  }
+          ],
+          "niu": [],
+          "ninu": []
     },
-    {
-      "id": "c2",
-      "when": "9/21 一 13:30–14:30",
-      "text": "Sales meeting",
-      "where": "",
-      "who": "",
-      "line": "KSL"
+    "calendar": [
+          {
+                  "id": "c1",
+                  "when": "9/21 一 11:00–12:00",
+                  "text": "Management Meeting KSL",
+                  "where": "Besprechungsraum 2. OG",
+                  "who": "Frank / Guido / Joachim / Carolin / 你",
+                  "line": "KSL"
+          },
+          {
+                  "id": "c2",
+                  "when": "9/21 一 13:30–14:30",
+                  "text": "Sales meeting",
+                  "where": "",
+                  "who": "",
+                  "line": "KSL"
+          },
+          {
+                  "id": "c3",
+                  "when": "9/22–25",
+                  "text": "2026堡国际风展（全天）",
+                  "where": "德国汉堡",
+                  "who": "",
+                  "line": "KSL"
+          },
+          {
+                  "id": "c4",
+                  "when": "9/23 三 03:3011:30",
+                  "text": "智能制造事业部销研（百福上海、上工富怡）",
+                  "where": "注",
+                  "who": "",
+                  "line": "KSL"
+          },
+          {
+                  "id": "c5",
+                  "when": "9/28 一 11:0012:00",
+                  "text": "Management Meeting KSL",
+                  "where": "Besprechungsraum 2. OG",
+                  "who": "",
+                  "line": "KSL"
+          },
+          {
+                  "id": "c6",
+                  "when": "9/28 一 13:3014:30",
+                  "text": "Sales meeting",
+                  "where": "",
+                  "who": "",
+                  "line": "KSL"
+          },
+          {
+                  "id": "c7",
+                  "when": "9/30 三 13:0014:00",
+                  "text": "same girl friend of Guido",
+                  "where": "",
+                  "who": "",
+                  "line": "KSL"
+          }
+    ],
+    "scanNote": "Richpeace exmail session expired; inbox unreplied scan pending re-login",
+    "lastBoard": {
+          "at": "2026-09-19 10:25 +08",
+          "choices": "1c,2c,3b,4c",
+          "via": "chat-paste+KSL sync"
     },
-    {
-      "id": "c3",
-      "when": "9/22–25",
-      "text": "2026汉堡国际风能展（全天）",
-      "where": "德国汉堡",
-      "who": "",
-      "line": "KSL"
-    },
-    {
-      "id": "c4",
-      "when": "9/23 三 03:30–11:30",
-      "text": "智能制造事业部产销研（百福上海、上工富怡）",
-      "where": "注意时区",
-      "who": "",
-      "line": "KSL"
-    },
-    {
-      "id": "c5",
-      "when": "9/28 一 11:00–12:00",
-      "text": "Management Meeting KSL",
-      "where": "Besprechungsraum 2. OG",
-      "who": "",
-      "line": "KSL"
-    },
-    {
-      "id": "c6",
-      "when": "9/28 一 13:30–14:30",
-      "text": "Sales meeting",
-      "where": "",
-      "who": "",
-      "line": "KSL"
-    },
-    {
-      "id": "c7",
-      "when": "9/30 三 13:00–14:00",
-      "text": "same girl friend of Guido",
-      "where": "",
-      "who": "",
-      "line": "KSL"
-    }
-  ],
-  "scanNote": "Richpeace exmail session expired; inbox unreplied scan pending re-login",
-  "lastBoard": {
-    "at": "2026-09-19 10:25 +08",
-    "choices": "1c,2c,3b,4c",
-    "via": "chat-paste+KSL sync"
-  }
+    "version": "1.1"
 }
