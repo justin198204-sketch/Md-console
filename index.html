@@ -113,8 +113,9 @@ function labelFor(d,letter,otherText){
   return o;
 }
 function summary(){
-  const m=loadC(), t=loadT(), list=data.decisions||[];
-  return list.map((d,i)=>{const L=m[d.id]||'?'; return `${i+1}${String(L).toLowerCase()}（${labelFor(d,L,t[d.id]||'')}）`}).join('；');
+  const m=loadC(), t=loadT(), list=(data.decisions||[]).filter(d=>m[d.id]);
+  if(!list.length) return '（未选择）';
+  return list.map((d,i)=>{const L=m[d.id]; return (i+1)+String(L).toLowerCase()+'（'+labelFor(d,L,t[d.id]||'')+'）'}).join('；');
 }
 function renderDecide(){
   const box=document.getElementById('p-decide'); const m=loadC(); const tmap=loadT(); const list=(data.decisions||[]).filter(passLine);
@@ -188,10 +189,21 @@ document.getElementById('btnSubmit').onclick=async()=>{
   if(list.some(d=>!m[d.id])){toast('还有未选项');return}
   for(const d of list){const ol=otherLetter(d); if(ol&&m[d.id]===ol&&!(tmap[d.id]||'').trim()){toast('请填写「其他」');return}}
   const payload={source:'md-console',date:data.date,summary:summary(),compact:list.map((d,i)=>`${i+1}${m[d.id].toLowerCase()}`).join(','),
-    decisions:list.map((d,i)=>({n:i+1,id:d.id,text:d.text,context:d.context||'',choice:m[d.id],label:labelFor(d,m[d.id],tmap[d.id]||''),otherText:otherLetter(d)===m[d.id]?(tmap[d.id]||''):'',note:d.note||'',noteSource:d.noteSource||'',noteAt:d.noteAt||''}))};
-  if(!hook){try{await navigator.clipboard.writeText(payload.summary)}catch{} toast('未配置 Webhook，已复制摘要'); tab='set'; render(); return}
-  try{await fetch(hook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),mode:'cors'}); toast('已提交给幕僚长')}
-  catch{try{await navigator.clipboard.writeText(payload.summary)}catch{} toast('提交失败，已复制摘要')}
+    decisions:list.map((d,i)=>({n:i+1,id:d.id,text:d.text,context:d.context||'',choice:m[d.id],label:labelFor(d,m[d.id],tmap[d.id]||''),otherText:otherLetter(d)===m[d.id]?(tmap[d.id]||''):'',note:d.note||'',noteSource:d.noteSource||'',noteAt:d.noteAt||'',line:d.line||''}))};
+  const body=JSON.stringify(payload);
+  try{await navigator.clipboard.writeText(payload.summary)}catch{}
+  if(!hook){toast('未配置 Webhook，摘要已复制，请粘贴给幕僚长'); tab='set'; render(); return}
+  let ok=false;
+  try{
+    if(navigator.sendBeacon){
+      ok=navigator.sendBeacon(hook,new Blob([body],{type:'text/plain;charset=UTF-8'}));
+    }
+    if(!ok){
+      await fetch(hook,{method:'POST',mode:'no-cors',body:body});
+      ok=true;
+    }
+  }catch(e){ok=false}
+  toast(ok?'已提交，请等幕僚长确认（摘要已复制）':'仍失败，请把复制的摘要贴到幕僚长聊天');
 };
 document.getElementById('lineFilters')?.addEventListener('click',e=>{
   const b=e.target.closest('[data-line]'); if(!b) return;
