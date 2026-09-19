@@ -78,10 +78,13 @@ header{position:sticky;top:0;z-index:5;padding:6px 2px 10px;background:linear-gr
 <section class="panel" id="p-set">
   <div class="sec"><span>同步到幕僚长</span></div>
   <div class="card item">
-    <div class="title">Webhook 地址（只需贴一次）</div>
-    <p class="hint">提交后会复制摘要；请粘贴到幕僚长聊天（最稳）。Webhook 可作备用：打开例行任务「MD拍板同步」复制 URL 保存。入口：[Webhook URL](grokbot://app/v1/sidebar?target=webhook-url&automation=md)</p>
+    <div class="title">同步代理（推荐）</div>
+    <p class="hint">填 Cloudflare Worker 地址，形如 https://xxx.workers.dev 。密钥只放 Cloudflare，不要贴 Webhook 到这里。</p>
+    <input class="field" id="proxyUrl" type="url" placeholder="https://md-board-proxy.…workers.dev" autocomplete="off"/>
+    <div class="title" style="margin-top:14px">直连 Webhook（不推荐，手机常失败）</div>
+    <p class="hint">备用。例行任务入口：[Webhook URL](grokbot://app/v1/sidebar?target=webhook-url&automation=md)</p>
     <input class="field" id="webhookUrl" type="url" placeholder="https://… webhook …" autocomplete="off"/>
-    <button class="btn primary" id="btnSaveHook" type="button" style="margin-top:10px;width:100%">保存地址</button>
+    <button class="btn primary" id="btnSaveHook" type="button" style="margin-top:10px;width:100%">保存</button>
   </div>
 </section>
 <div class="bar">
@@ -91,7 +94,7 @@ header{position:sticky;top:0;z-index:5;padding:6px 2px 10px;background:linear-gr
 <div class="toast" id="toast"></div>
 <script>
 const DATA = {"date": "2026-09-19", "title": "MD Dashboard", "updatedAt": "2026-09-19T10:25:00+08:00", "lines": ["全部", "KSL", "Richpeace"], "decisions": [{"id": "d1", "text": "Joachim 搬迁：档期确认", "context": "Dual KSL CNC Sewing + Silicone 搬迁。报价按14天，确认窗口9天（2026-11-26～12-04）。确认信不代发。", "source": "邮件", "line": "KSL", "note": "已选 C 出差后再说；可改。", "noteSource": "Justin 拍板", "noteAt": "2026-09-19 10:25 +08", "options": ["A 按9天确认", "B 改14天报价", "C 出差后再说", "D 其他…"], "chosen": "C"}, {"id": "d2", "text": "Patrick 8月财务上传 + CPCONS", "context": "待核8月 BS/P&L/YTF 上传与 CPCONS；股东会+PSR约9/23需盯。", "source": "邮件/Teams", "line": "KSL", "note": "已选 C 先搁置（覆盖原 2B 周一）；可改。", "noteSource": "Justin 拍板", "noteAt": "2026-09-19 10:25 +08", "options": ["A 今日处理", "B 返程后周一", "C 先搁置", "D 其他…"], "chosen": "C"}, {"id": "d3", "text": "ekom21 申请 26.5214", "context": "外部申请需先验发件人/附件再定是否推进。", "source": "邮件", "line": "KSL", "note": "已选 B 先搁置（覆盖原 3C 不做）；可改。", "noteSource": "Justin 拍板", "noteAt": "2026-09-19 10:25 +08", "options": ["A 继续推进", "B 先搁置", "C 不做", "D 其他…"], "chosen": "B"}, {"id": "r1", "text": "Richpeace 三条跟进口径何时重启？", "context": "多针细节、Adient 精度风险联合评估、Morocco 直订/售后边界。出差前搁置不外发。收件未回复待登录后补扫。", "source": "交接/邮件", "line": "Richpeace", "note": "已选 C 继续搁置；出差前不外发。", "noteSource": "Justin 拍板", "noteAt": "2026-09-19 10:25 +08", "options": ["A 回来立刻重启", "B 指定日期再议", "C 继续搁置", "D 其他…"], "chosen": "C"}], "quadrants": {"iu": [{"id": "iu1", "text": "SQ 值机 — 已完成关闭", "source": "邮件", "line": "KSL", "done": true}, {"id": "iu2", "text": "Patrick 财务 — 先搁置", "source": "邮件", "line": "KSL"}], "inu": [{"id": "inu1", "text": "盯 9/23 股东会 + PSR（6月格式）", "source": "Teams", "line": "KSL"}, {"id": "inu2", "text": "Frank：周一对齐股东会新幻灯片", "source": "Teams", "line": "KSL"}, {"id": "inu3", "text": "Joachim 搬迁 — 出差后再说（不发不催）", "source": "邮件", "line": "KSL"}, {"id": "rinu1", "text": "多针/Ida：补技术细节或改 LR15 口径", "context": "Ida 9/3 称缺 Justin 细节；双锁式+多针近 LR15 非标配；未见已回", "note": "出差后再说；出差前不外发", "noteSource": "Justin批示", "noteAt": "2026-09-18", "source": "邮件", "line": "Richpeace"}, {"id": "rinu2", "text": "Adient 自动化上下料：精度风险与技价交期", "context": "定位±1mm/切割±3mm；场地约5.5×6.5m；产量约7000/16h；Ida评精度风险高", "note": "出差后再说；出差前不外发", "noteSource": "Justin批示", "noteAt": "2026-09-18", "source": "邮件", "line": "Richpeace"}, {"id": "rinu3", "text": "Morocco 刺绣+CNC：直订路径与报价确认", "context": "4头600×700×4台约€121,640；含选项服务夹具约€164,140；Ida倾向Adient直订Richpeace；售后可由KSL", "note": "出差后再说；出差前不外发", "noteSource": "Justin批示", "noteAt": "2026-09-18", "source": "邮件", "line": "Richpeace"}, {"id": "rinu4", "text": "收件箱未回复扫描：待重新登录 exmail 后补扫", "context": "网页会话已掉线，停在登录页；备份夹不扫", "note": "登录恢复后更新 Dashboard", "noteSource": "Richpeace秘书", "noteAt": "2026-09-19 09:51 +08", "source": "系统", "line": "Richpeace"}], "niu": [], "ninu": []}, "calendar": [{"id": "c1", "when": "9/21 一 11:00–12:00", "text": "Management Meeting KSL", "where": "Besprechungsraum 2. OG", "who": "Frank / Guido / Joachim / Carolin / 你", "line": "KSL"}, {"id": "c2", "when": "9/21 一 13:30–14:30", "text": "Sales meeting", "where": "", "who": "", "line": "KSL"}, {"id": "c3", "when": "9/22–25", "text": "2026汉堡国际风能展（全天）", "where": "德国汉堡", "who": "", "line": "KSL"}, {"id": "c4", "when": "9/23 三 03:30–11:30", "text": "智能制造事业部产销研（百福上海、上工富怡）", "where": "注意时区", "who": "", "line": "KSL"}, {"id": "c5", "when": "9/28 一 11:00–12:00", "text": "Management Meeting KSL", "where": "Besprechungsraum 2. OG", "who": "", "line": "KSL"}, {"id": "c6", "when": "9/28 一 13:30–14:30", "text": "Sales meeting", "where": "", "who": "", "line": "KSL"}, {"id": "c7", "when": "9/30 三 13:00–14:00", "text": "same girl friend of Guido", "where": "", "who": "", "line": "KSL"}], "scanNote": "Richpeace exmail session expired; inbox unreplied scan pending re-login", "lastBoard": {"at": "2026-09-19 10:25 +08", "choices": "1c,2c,3b,4c", "via": "chat-paste+KSL sync"}};
-const KEY_C='md-console-choices-v4', KEY_T='md-console-other-text-v4', KEY_D='md-console-done-v4', KEY_W='md-console-webhook-v1';
+const KEY_C='md-console-choices-v4', KEY_T='md-console-other-text-v4', KEY_D='md-console-done-v4', KEY_W='md-console-webhook-v1', KEY_P='md-console-proxy-v1';
 let tab='decide', lineFilter='全部';
 let data=DATA;
 function passLine(it){return !it||lineFilter==='全部'||it.line===lineFilter;}
@@ -169,6 +172,7 @@ function render(){
     lf.innerHTML=lines.map(l=>`<button class="tab${lineFilter===l?' on':''}" data-line="${esc(l)}" type="button">${esc(l)}</button>`).join('');
   }
   const wh=document.getElementById('webhookUrl'); if(wh) wh.value=localStorage.getItem(KEY_W)||'';
+  const px=document.getElementById('proxyUrl'); if(px) px.value=localStorage.getItem(KEY_P)||'';
   renderDecide(); renderTodo(); renderCal();
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+tab));
   document.querySelectorAll('.tabs:not(#lineFilters) .tab[data-p]').forEach(t=>t.classList.toggle('on',t.dataset.p===tab));
@@ -188,37 +192,42 @@ document.body.addEventListener('input',e=>{
   const inp=e.target.closest('[data-other-input]');
   if(!inp) return; const m=loadT(); m[inp.getAttribute('data-other-input')]=inp.value; saveT(m);
 });
-document.getElementById('btnSaveHook').onclick=()=>{const v=document.getElementById('webhookUrl').value.trim(); localStorage.setItem(KEY_W,v); toast(v?'已保存':'已清空')};
+document.getElementById('btnSaveHook').onclick=()=>{const v=(document.getElementById('webhookUrl')||{}).value||''; const p=(document.getElementById('proxyUrl')||{}).value||''; localStorage.setItem(KEY_W,v.trim()); localStorage.setItem(KEY_P,p.trim()); toast((p.trim()||v.trim())?'已保存':'已清空')};
 document.getElementById('btnClear').onclick=()=>{localStorage.removeItem(KEY_C); localStorage.removeItem(KEY_T); render(); toast('已清除')};
 document.getElementById('btnSubmit').onclick=async()=>{
-  const hook=localStorage.getItem(KEY_W)||''; const m=loadC(), tmap=loadT(), list=data.decisions||[];
+  const proxy=(localStorage.getItem(KEY_P)||'').trim();
+  const hook=(localStorage.getItem(KEY_W)||'').trim();
+  const m=loadC(), tmap=loadT(), list=data.decisions||[];
   if(list.some(d=>!m[d.id])){toast('还有未选项');return}
   for(const d of list){const ol=otherLetter(d); if(ol&&m[d.id]===ol&&!(tmap[d.id]||'').trim()){toast('请填写「其他」');return}}
   const payload={source:'md-console',date:data.date,summary:summary(),compact:list.map((d,i)=>`${i+1}${m[d.id].toLowerCase()}`).join(','),
     decisions:list.map((d,i)=>({n:i+1,id:d.id,text:d.text,context:d.context||'',choice:m[d.id],label:labelFor(d,m[d.id],tmap[d.id]||''),otherText:otherLetter(d)===m[d.id]?(tmap[d.id]||''):'',note:d.note||'',noteSource:d.noteSource||'',noteAt:d.noteAt||'',line:d.line||''}))};
-  const text=payload.summary;
+  const body=JSON.stringify(payload);
   let copied=false;
-  try{await navigator.clipboard.writeText(text); copied=true}catch(e){
-    try{
-      const ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.left='-9999px';
-      document.body.appendChild(ta); ta.select(); copied=document.execCommand('copy'); document.body.removeChild(ta);
-    }catch{}
+  try{await navigator.clipboard.writeText(payload.summary); copied=true}catch(e){
+    try{const ta=document.createElement('textarea'); ta.value=payload.summary; ta.style.position='fixed'; ta.style.left='-9999px'; document.body.appendChild(ta); ta.select(); copied=document.execCommand('copy'); document.body.removeChild(ta);}catch{}
   }
-  // best-effort webhook; never block UX on CORS
-  if(hook){
-    try{ navigator.sendBeacon && navigator.sendBeacon(hook, text); }catch{}
-    try{ fetch(hook,{method:'POST',mode:'no-cors',body:text,keepalive:true}); }catch{}
-    try{
-      const f=document.createElement('form'); f.method='POST'; f.action=hook; f.target='_blank'; f.style.display='none';
-      const inp=document.createElement('input'); inp.name='payload'; inp.value=text; f.appendChild(inp);
-      document.body.appendChild(f); /* skip auto-submit form to avoid opening blank tab */ document.body.removeChild(f);
-    }catch{}
-  }
-  if(!hook){
-    toast(copied?'未配置 Webhook，摘要已复制，请粘贴给幕僚长':'请手动复制选择结果发给幕僚长');
+  const target=proxy||hook;
+  if(!target){
+    toast(copied?'未配置同步地址，摘要已复制，请粘贴给幕僚长':'请配置同步代理或粘贴摘要');
     tab='set'; render(); return;
   }
-  toast(copied?'摘要已复制 — 请粘贴到幕僚长聊天（Webhook 可能被浏览器拦截）':'请把选项结果发给幕僚长');
+  if(proxy){
+    try{
+      const r=await fetch(proxy,{method:'POST',headers:{'Content-Type':'application/json'},body,mode:'cors'});
+      const j=await r.json().catch(()=>({}));
+      if(r.ok && j.ok!==false){toast('已同步给幕僚长'); return;}
+      toast(copied?'同步失败，摘要已复制，请粘贴给幕僚长':'同步失败，请检查 Worker');
+      return;
+    }catch(e){
+      toast(copied?'同步失败，摘要已复制，请粘贴给幕僚长':'同步失败');
+      return;
+    }
+  }
+  // legacy direct webhook best-effort
+  try{ navigator.sendBeacon && navigator.sendBeacon(hook, body); }catch{}
+  try{ fetch(hook,{method:'POST',mode:'no-cors',body,keepalive:true}); }catch{}
+  toast(copied?'直连不稳定，摘要已复制，请粘贴确认':'请粘贴摘要给幕僚长');
 };
 document.getElementById('lineFilters')?.addEventListener('click',e=>{
   const b=e.target.closest('[data-line]'); if(!b) return;
