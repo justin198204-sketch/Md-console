@@ -1,7 +1,7 @@
 {
   "date": "2026-09-21",
   "title": "MD Dashboard V1.1",
-  "updatedAt": "2026-09-21T07:08:00+08:00",
+  "updatedAt": "2026-09-21T07:49:00+08:00",
   "lines": [
     "全部",
     "KSL",
@@ -9,125 +9,52 @@
   ],
   "decisions": [
     {
-      "id": "d4",
-      "text": "Yanis Aber / Forvia：PO 是否已放行与账户未决事项",
-      "context": "发件线为 Forvia（美洲 Commodity Manager Yanis Aber 起头；最新 9/19 回复来自 Sulejman Cilla）。对方要 Justin 内部核实：此前卡住发货/报价/维修服务的采购订单是否已真正放行，并给出状态。关键机头 557-00004、562-00018 已在 KSL 备妥待发。卡点：此前 KSL 因缺少已完成服务/零件/维修对应 PO，服务与出货被挂起；无 PO 则无法放货、出新报价或接新服务。无硬性截止日期，对方要求 ASAP 更新。",
-      "note": "已选 C 先搁置；可改。",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
-      "source": "邮件",
-      "line": "KSL",
-      "options": [
-        "A 今日回（已放行/未放行）",
-        "B 周一回",
-        "C 先搁置",
-        "D 其他…"
-      ],
-      "chosen": "C"
-    },
-    {
-      "id": "d5",
-      "text": "Joyce / Richpeace：零件 PI 付款与债务确认函",
-      "context": "发件人 Joyce Jiao（Richpeace 销售经理，供应商）；主送 Transmetall（Darekom/Marina），Justin 抄送。对方要会计周二备现支付本批零件款，并确认/签署债务确认函与付款计划（9/18 已提）。本批金额：零件 RMB 3,728 + 运费 RMB 1,500 = RMB 5,228（邮件称约 68,000 卢布）。附件含 Courier No.png、2026 parts signed.pdf、20260430 Richpeace parts Commercial invoice.pdf。线程历史还有更早逾期 PI（PIRPSP20251121RU / PIRPSP20251222RU），合计约 CNY 534,155，其中曾欠约 CNY 456,055；此前期限（7月底/8/14）及 8/17 保险索赔威胁均已过。卡点：款项未付 + 债务确认函/付款计划未签回。",
-      "note": "已选 D 内容知晓，不做批复",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
-      "source": "邮件",
-      "line": "KSL",
-      "options": [
-        "A 今日批本批5228",
-        "B 交财务周一",
-        "C 先搁置",
-        "D 其他…"
-      ],
-      "chosen": "D",
-      "otherText": "内容知晓，不做批复"
-    },
-    {
-      "id": "d6",
-      "text": "Ida / Richpeace：墨西哥 DA 设备价格表审阅",
-      "context": "发件人 Ida Wang（Richpeace 销售经理，设备供应商），直接给 Justin。对方请 Justin 审阅附件《2026.09.18富怡设备价格表-给DA.xlsx》，并在向墨西哥 DA 客户报价前先摸清客户需求。Richpeace 提醒：TIER1 不宜直接按表报价（通常有特殊要求）；TIER2 及以下一般可直接报价，但仍建议先核对需求。邮件未写死金额数字或交期。卡点：缺墨西哥 DA 的客户特定需求确认，尤其 TIER1。",
-      "note": "已选 D 已经通过电话，Ida自行处理",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
-      "source": "邮件",
-      "line": "KSL",
-      "options": [
-        "A 今日审并定口径",
-        "B 交Richpeace秘书",
-        "C 出差后再说",
-        "D 其他…"
-      ],
-      "chosen": "D",
-      "otherText": "已经通过电话，Ida自行处理"
-    },
-    {
       "id": "d1",
-      "text": "Joachim 搬迁：档期确认",
-      "context": "Dual KSL CNC Sewing + Silicone 搬迁。报价按14天，确认窗口9天。确认信不代发。",
+      "text": "PSR Bangert：今天是否仍按模板补交？",
+      "context": "Melanie Bangert 9/2《KSL - PSR-Daten》要求最迟 9/14 10:00 提交 PSR（Finance/Development/Project Status/Sales），附件 Vorlage_PSR.pptx。至今未见提交。9/20 拍板周一补交；今天周一，需确认是否仍今天交、改期或他人代交你审签。",
       "source": "邮件",
       "line": "KSL",
-      "note": "已选 C 出差后再说；可改。",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
+      "note": "昨夜选过 A 周一补交；今日需再确认执行方式",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-21 07:49 +08",
       "options": [
-        "A 按9天确认",
-        "B 改14天报价",
-        "C 出差后再说",
+        "A 今天按模板补交",
+        "B 改期到周三前并告知",
+        "C 指定他人代交你审签",
         "D 其他…"
-      ],
-      "chosen": "C"
+      ]
     },
     {
       "id": "d2",
-      "text": "Patrick 8月财务上传 + CPCONS",
-      "context": "待核8月 BS/P&L/YTF 上传与 CPCONS；股东会+PSR约9/23需盯。",
-      "source": "邮件/Teams",
+      "text": "9/23 股东会材料：今日会如何对齐？",
+      "context": "9/23 股东会临近。Patrick 按6月格式更新股东会/PSR数据未见确认；Frank 新幻灯片待对齐。今天 11:00 Management Meeting KSL（2.OG，Frank）。",
+      "source": "Teams",
       "line": "KSL",
-      "note": "已选 C 先搁置；可改。",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
+      "note": "待拍板",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-21 07:49 +08",
       "options": [
-        "A 今日处理",
-        "B 返程后周一",
-        "C 先搁置",
+        "A 会上对齐并催Patrick",
+        "B 会后约、最迟明天交齐",
+        "C 先开会、材料周三前再说",
         "D 其他…"
-      ],
-      "chosen": "C"
+      ]
     },
     {
       "id": "d3",
-      "text": "ekom21 申请 26.5214",
-      "context": "外部申请需先验发件人/附件再定是否推进。",
+      "text": "Forvia/Yanis：是否改催书面放行？",
+      "context": "CILLA/Yanis/Laura 9/19 Forvia 账户：缺已完成服务 PO，设备 557-00004、562-00018，服务发货暂停；CILLA 称据悉已放行仍需核实。9/20 曾拍搁置；今天是否改催书面放行。",
       "source": "邮件",
       "line": "KSL",
-      "note": "已选 C 不做；可改。",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
+      "note": "昨夜选 C 搁置；今日是否改口",
+      "noteSource": "KSL秘书扫描",
+      "noteAt": "2026-09-21 07:49 +08",
       "options": [
-        "A 继续推进",
-        "B 先搁置",
-        "C 不做",
-        "D 其他…"
-      ],
-      "chosen": "C"
-    },
-    {
-      "id": "d7",
-      "text": "Melanie Bangert：PSR 数据逾期未交",
-      "context": "发件人 Melanie Bangert（KSL/PFAFF 管理助理，内部 PSR 月报协调）。要求各部门用 Vorlage_PSR.pptx，于 2026-09-14 10:00 前提交。Justin 负责 Finanzen（与 Patrick Müller）及 Vertrieb/Sales（与 Guido Jaeger）；Guido 另负责开发与项目状态。卡点：截至 9/20 仍未见 Justin 侧提交/回复，已超过原定 9/14 节点；Bangert 休假信息此前记到 9/25，但逾期事实仍在。",
-      "note": "已选 A 周一补交；可改。",
-      "noteSource": "Justin 拍板（粘贴确认）",
-      "noteAt": "2026-09-20 02:26 +08",
-      "source": "邮件",
-      "line": "KSL",
-      "options": [
-        "A 周一补交",
+        "A 今天催最终核实+书面放行",
         "B 继续搁置",
-        "C 交Patrick先跟财务",
+        "C 关闭跟进",
         "D 其他…"
-      ],
-      "chosen": "A"
+      ]
     },
     {
       "id": "r1",
@@ -166,55 +93,51 @@
   "quadrants": {
     "iu": [
       {
-        "id": "iu_psr",
-        "text": "PSR Bangert — 周一补交（已选 A）",
-        "context": "Melanie Bangert 要求 Finanzen/Vertrieb 用模板于 9/14 前提交；Justin 已拍 A 周一补交。",
-        "note": "已选 A 周一补交",
-        "noteSource": "Justin 拍板",
-        "noteAt": "2026-09-20 02:26 +08",
+        "id": "q1",
+        "text": "PSR Bangert 补交（周一包）",
         "source": "邮件",
+        "line": "KSL",
+        "context": "昨夜拍 A 周一补交；今日需确认是否仍执行/改期/代交。"
+      },
+      {
+        "id": "q2",
+        "text": "今日 11:00 Management｜对齐 Frank 幻灯片",
+        "source": "日历",
+        "line": "KSL"
+      },
+      {
+        "id": "q3",
+        "text": "催 Patrick：9/23 股东会+PSR 数据",
+        "source": "Teams",
         "line": "KSL"
       }
     ],
     "inu": [
       {
-        "id": "inu1",
-        "text": "盯 9/23 股东会 + PSR（6月格式｜Patrick/Guido）",
+        "id": "q4",
+        "text": "Forvia/Yanis PO 放行｜557-00004、562-00018",
+        "source": "邮件",
+        "line": "KSL",
+        "note": "昨夜搁置，今日再确认"
+      },
+      {
+        "id": "q5",
+        "text": "Guido Marketing+R&D slides 未见确认",
         "source": "Teams",
         "line": "KSL"
       },
       {
-        "id": "inu2",
-        "text": "Frank：周一对齐股东会新幻灯片",
-        "source": "Teams",
+        "id": "q6",
+        "text": "Joachim 搬迁档期 — 出差后再说",
+        "source": "邮件",
+        "line": "KSL",
+        "note": "已选出差后"
+      },
+      {
+        "id": "q7",
+        "text": "Dominik CW38 周报未见闭环",
+        "source": "邮件",
         "line": "KSL"
-      },
-      {
-        "id": "inu3",
-        "text": "Joachim 搬迁 — 出差后再说（不发不催）",
-        "source": "邮件",
-        "line": "KSL",
-        "note": "已选 C",
-        "noteSource": "Justin 拍板",
-        "noteAt": "2026-09-20"
-      },
-      {
-        "id": "inu4",
-        "text": "Yanis Aber PO/账户 — 先搁置",
-        "source": "邮件",
-        "line": "KSL",
-        "note": "已选 C",
-        "noteSource": "Justin 拍板",
-        "noteAt": "2026-09-20"
-      },
-      {
-        "id": "inu5",
-        "text": "Patrick 8月财务/CPCONS — 先搁置",
-        "source": "邮件/Teams",
-        "line": "KSL",
-        "note": "已选 C",
-        "noteSource": "Justin 拍板",
-        "noteAt": "2026-09-20"
       },
       {
         "id": "rinu1",
@@ -249,25 +172,30 @@
         "line": "Richpeace"
       }
     ],
-    "niu": [
-      {
-        "id": "niu1",
-        "text": "Fritz/Saskia SONOTRONIC Umzug Büro — Justin 仅 CC，约 10/9",
-        "source": "邮件",
-        "line": "KSL",
-        "context": "办公室搬迁相关，Justin 抄送；无硬性动作。"
-      }
-    ],
+    "niu": [],
     "ninu": [
       {
-        "id": "ninu1",
-        "text": "Dominik Eickhoff Weekly report CW 38 — 无硬动作",
+        "id": "q8",
+        "text": "Fritz/Saskia Umzug Büro（仅 CC，约 10/9）",
         "source": "邮件",
         "line": "KSL"
       },
       {
-        "id": "ninu2",
-        "text": "Joyce PI / Ida 墨西哥 DA / ekom21 — 已拍板关闭或知晓",
+        "id": "q9",
+        "text": "ekom21 26.5214（已拍不做）",
+        "source": "邮件",
+        "line": "KSL",
+        "done": true
+      },
+      {
+        "id": "q10",
+        "text": "Patrick 8月财务/CPCONS（已搁置）",
+        "source": "邮件",
+        "line": "KSL"
+      },
+      {
+        "id": "q11",
+        "text": "Joyce PI / Ida 墨西哥 DA（已拍知晓/自理）",
         "source": "邮件",
         "line": "KSL",
         "done": true
@@ -277,7 +205,7 @@
   "calendar": [
     {
       "id": "c1",
-      "when": "9/21 一 11:00–12:00",
+      "when": "今天 一 11:00–12:00",
       "text": "Management Meeting KSL",
       "where": "Besprechungsraum 2. OG",
       "who": "Frank Meyer 等",
@@ -285,7 +213,7 @@
     },
     {
       "id": "c2",
-      "when": "9/21 一 13:30–14:30",
+      "when": "今天 一 13:30–14:30",
       "text": "Sales meeting",
       "where": "",
       "who": "",
@@ -312,7 +240,7 @@
       "when": "9/28 一 11:00–12:00",
       "text": "Management Meeting KSL",
       "where": "Besprechungsraum 2. OG",
-      "who": "",
+      "who": "Frank",
       "line": "KSL"
     },
     {
@@ -332,7 +260,7 @@
       "line": "KSL"
     }
   ],
-  "scanNote": "Richpeace 9/21: exmail still offline; r2 login decision open | KSL Monday package active",
+  "scanNote": "KSL 9/21 07:49 Outlook+Teams 实扫；连接器未授权 | Richpeace: exmail offline, r2 open",
   "lastBoard": {
     "at": "2026-09-20 02:26 +08",
     "choices": "1c,2d,3d,4c,5c,6c,7a,8c",
