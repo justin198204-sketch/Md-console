@@ -1,7 +1,7 @@
 {
-  "date": "2026-09-20",
+  "date": "2026-09-21",
   "title": "MD Dashboard V1.1",
-  "updatedAt": "2026-09-20T07:15:00+08:00",
+  "updatedAt": "2026-09-21T07:08:00+08:00",
   "lines": [
     "全部",
     "KSL",
@@ -145,6 +145,22 @@
         "D 其他…"
       ],
       "chosen": "C"
+    },
+    {
+      "id": "r2",
+      "text": "exmail 重登以便补扫未回复",
+      "context": "网页会话超时，停在 https://exmail.qq.com/login（企业微信扫码）。未扫收件箱与备份夹。需 Justin 登录后才能补扫对方在等回复/需拍板事项。",
+      "source": "系统",
+      "line": "Richpeace",
+      "options": [
+        "A 现在扫码登录",
+        "B 今晚再登",
+        "C 先搁置",
+        "D 其他…"
+      ],
+      "note": "待拍板",
+      "noteSource": "Richpeace秘书",
+      "noteAt": "2026-09-21 07:08 +08"
     }
   ],
   "quadrants": {
@@ -203,40 +219,32 @@
       {
         "id": "rinu1",
         "text": "多针口径（Ida）",
-        "context": "Ida 此前称缺少 Justin 侧技术细节；双锁式+多针接近 LR15 但非标配。Justin 已拍板出差前继续搁置、不外发。今日因 exmail 掉线未能确认是否有新往来。",
+        "context": "缺 Justin 侧技术细节；双锁式+多针近 LR15 非标配。出差前搁置不外发。",
         "note": "出差后再说；不外发",
-        "noteSource": "Justin批示/Richpeace秘书",
-        "noteAt": "2026-09-20",
         "source": "邮件",
         "line": "Richpeace"
       },
       {
         "id": "rinu2",
         "text": "Adient 自动化上下料/精度风险",
-        "context": "Adient 要求视觉定位约±1mm、切割公差约±3mm，场地约5.5×6.5m，产量约7000件/16h。Ida 评精度风险高。Justin 已拍板出差前搁置、不外发。",
+        "context": "定位约±1mm、切割约±3mm，场地约5.5×6.5m，产量约7000/16h；Ida 评精度风险高。出差前搁置不外发。",
         "note": "出差后再说；不外发",
-        "noteSource": "Justin批示/Richpeace秘书",
-        "noteAt": "2026-09-20",
         "source": "邮件 Ida",
         "line": "Richpeace"
       },
       {
         "id": "rinu3",
         "text": "Morocco 刺绣/CNC 报价",
-        "context": "Adient Trim Morocco：4头600×700、4台约€121,640；含选项服务夹具约€164,140。Ida 倾向 Adient 直订 Richpeace，售后可由 KSL。Justin 已拍板出差前搁置、不外发。",
+        "context": "4头600×700、4台约€121,640；含选项服务夹具约€164,140。Ida 倾向 Adient 直订 Richpeace。出差前搁置不外发。",
         "note": "出差后再说；不外发",
-        "noteSource": "Justin批示/Richpeace秘书",
-        "noteAt": "2026-09-20",
         "source": "邮件 Ida",
         "line": "Richpeace"
       },
       {
         "id": "rinu4",
         "text": "exmail 未回复补扫：待 Justin 重登",
-        "context": "网页会话超时，未能新扫收件箱。墨西哥 DA 已电话、Ida 自理，无需外发。",
+        "context": "掉线于 login 页；墨西哥 DA 已电话、Ida 自理，无需外发。",
         "note": "登录恢复后补扫",
-        "noteSource": "Richpeace秘书",
-        "noteAt": "2026-09-20 07:14 +08",
         "source": "系统",
         "line": "Richpeace"
       }
@@ -324,7 +332,7 @@
       "line": "KSL"
     }
   ],
-  "scanNote": "KSL 07:00 Outlook 实扫；Teams MCP needsAuth→股东会/幻灯片沿用记忆；昨夜拍板仍有效 | Richpeace: exmail timeout",
+  "scanNote": "Richpeace 9/21: exmail still offline; r2 login decision open | KSL Monday package active",
   "lastBoard": {
     "at": "2026-09-20 02:26 +08",
     "choices": "1c,2d,3d,4c,5c,6c,7a,8c",
