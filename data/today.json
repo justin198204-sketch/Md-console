@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "title": "MD Dashboard V1.1",
-  "updatedAt": "2026-10-09T19:24:00+01:00",
+  "updatedAt": "2026-10-09T19:27:00+01:00",
   "lines": [
     "全部",
     "KSL",
@@ -116,16 +116,16 @@
       "context": "多针细节（Ida）、Adient 自动化上下料精度风险、Morocco 刺绣/CNC 直订路径。出差前选过 C 继续搁置、不外发。你已在突尼斯介绍 Richpeace 汽车/服装产品；Alva 替代方案与 Richpeace 组装相关。需定是否重启这三条，或并入 Alva/CMC 报价线。",
       "source": "交接/邮件",
       "line": "Richpeace",
-      "note": "A 立刻重启三条跟进",
-      "noteSource": "Justin 拍板",
-      "noteAt": "2026-10-09 19:24 +01",
+      "note": "Justin 改口：由 Ida 自行跟进，不外发",
+      "noteSource": "Justin",
+      "noteAt": "2026-10-09 19:27 +01",
       "options": [
         "A 立刻重启三条跟进",
         "B 并入 Alva/CMC 线再议",
         "C 继续搁置",
         "D 其他…"
       ],
-      "chosen": "A"
+      "chosen": "C"
     }
   ],
   "quadrants": {
@@ -326,8 +326,8 @@
   ],
   "scanNote": "CW41 修订版 10/9 傍晚：Outlook 10/5–10/9 核对；Interfracht 已付；TÜV 仅 10/12；Open House 已报名；PSR 新截止 10/15 10:00 | Richpeace: Alva替代方案+孟加拉会议",
   "lastBoard": {
-    "at": "2026-10-09 19:24 +01",
-    "choices": "1c,2b,3a,4a,5a,6d,7a",
+    "at": "2026-10-09 19:27 +01",
+    "choices": "1c,2b,3a,4a,5a,6d,7c",
     "via": "chat-paste",
     "detail": {
       "d1": "C 搁置",
@@ -336,9 +336,9 @@
       "d4": "A 催 Meyer 确认公务出差",
       "d5": "A 确认只出 KSL 并派人",
       "d6": "D 其他：已转Kurth",
-      "r1": "A 立刻重启三条跟进"
+      "r1": "C / 继续搁置（Ida 自行跟进）"
     },
-    "note": "CW41 拍板已记录：1c/2b/3a/4a/5a/6d/7a"
+    "note": "CW41 拍板已记录：1c/2b/3a/4a/5a/6d/7c"
   },
   "version": "1.1"
 }
