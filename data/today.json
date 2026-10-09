@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "title": "MD Dashboard V1.1",
-  "updatedAt": "2026-10-09T19:15:00+01:00",
+  "updatedAt": "2026-10-09T19:24:00+01:00",
   "lines": [
     "全部",
     "KSL",
@@ -14,15 +14,16 @@
       "context": "突尼斯拜访后，CMC（Faiez Fakhfekh）10/6 要求按 CMC 净价出一份 Richpeace 替代方案报价，希望周四见 Alva 前拿到。原 KSL 报价 30028307（2026-05-06 报给 CMC，终端 Alva Tunisia，Airbag 2-Needle，KL.351 600×600）已过期；整单扣 15% 经销折扣后净价约 €129,582。你 8/24 口径可谈到 €100,000（Richpeace 组装、KSL 技术指导与最终认可）。你 10/6 回复先见面再定。卡点：替代方案报价未发，规格/交期/签约主体未定；Yassine 10/8 Teams「ALVA meeting - KSL」邀请也未回。",
       "source": "邮件",
       "line": "KSL",
-      "note": "待拍板：报价时机 + 签约主体（KSL / Richpeace / CMC）",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "C 搁置",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 本周前出 CMC 净价报价",
         "B 等当面/Teams 后再出",
         "C 搁置",
         "D 其他…"
-      ]
+      ],
+      "chosen": "C"
     },
     {
       "id": "d2",
@@ -30,15 +31,16 @@
       "context": "Melanie Bangert 10/8《KSL - PSR-Daten》（高优先级）要求 10/15 10:00 前交数据，模板 Vorlage_PSR.pptx。分工：财务 J. Zhang + P. Müller；开发 G. Jaeger；项目状态 J. Hertrich；销售 J. Zhang + G. Jaeger。9 月那轮 9/14 截止已过、未交；本轮是新截止，需定你亲自做财务+销售块，还是指定 Müller/Guido 先出你审签。尚未回复 Bangert。",
       "source": "邮件",
       "line": "KSL",
-      "note": "待拍板：亲自做 vs 指定 Müller/Guido",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "B 指定 Müller/Guido 先出你审签",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 亲自做财务+销售块",
         "B 指定 Müller/Guido 先出你审签",
         "C 改期并告知 Bangert",
         "D 其他…"
-      ]
+      ],
+      "chosen": "B"
     },
     {
       "id": "d3",
@@ -46,15 +48,16 @@
       "context": "ITC/DERPART（Jobst Rottmann）10/4 催客户号 11048 未付合计 €36,283.80；10/5 另有 Flight Design KD 114414 催款。10/9 付款跑中已付 ITC 差旅入账发票 €14,618.85（F110000038），但这笔催款总额仍在。卡点：需按发票号对账后决定付款、砍手续费再谈，或暂挂。付款类须你拍板。",
       "source": "邮件",
       "line": "KSL",
-      "note": "待拍板：对账付款 / 砍费再谈 / 暂挂",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "A 对账后付款",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 对账后付款",
         "B 先砍手续费再谈",
         "C 暂挂",
         "D 其他…"
-      ]
+      ],
+      "chosen": "A"
     },
     {
       "id": "d4",
@@ -62,15 +65,16 @@
       "context": "内部转账单 681（发票 1900046594，含税 €4,576.94）拆三项：Demando €1,011.93 净已批入账；车辆租赁 €693.32 净（公务池车）10/6 已批；差旅 €2,140.92 净（Ast/KL381 Monza、Schneider/KL230 + AirPlus 机票）仍等 Meyer 确认是否公务出差。PFAFF Kaiserslautern 大额 €25,587.34 账户锁 004 继续不放行。卡点：差旅项无人确认则整包无法清。",
       "source": "邮件",
       "line": "KSL",
-      "note": "待拍板：催 Meyer / 先不付 / 自己核对后批",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "A 催 Meyer 确认公务出差",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 催 Meyer 确认公务出差",
         "B 先不付、继续挂锁",
         "C 自己核对后批",
         "D 其他…"
-      ]
+      ],
+      "chosen": "A"
     },
     {
       "id": "d5",
@@ -78,15 +82,16 @@
       "context": "Dürkopp Adler Open House 11/10–13 比勒费尔德（Potsdamer Str. 190）；9 日布展、13 日撤展。Joachim 10/9 已把报名表发给 DA Gina（Guido 10/8 签字），报不带机器的信息台约 4㎡、220V、不做讲座。口径：只出 KSL，不出 Mauser / Richpeace 贴牌。€1,000 标在 10 日经销商会议一行，不一定是展位费。卡点：你还没回复是否派人 11/10–13。",
       "source": "邮件",
       "line": "KSL",
-      "note": "待拍板：只出 KSL 确认 + 是否派人",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "A 确认只出 KSL 并派人",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 确认只出 KSL 并派人",
         "B 只出信息台、不派人",
         "C 取消/改派",
         "D 其他…"
-      ]
+      ],
+      "chosen": "A"
     },
     {
       "id": "d6",
@@ -94,15 +99,16 @@
       "context": "BDO 10/5 已把 2025 审计报告和 Testat 发给你。同日 DA Daniel Kurth 问 Commerzbank 要用的报告好了没有，你 15:39 回「Not yet, let me contact BDO」。报告已收到，但未见转给 Kurth 或 Commerzbank 的邮件。BDO €15,077.30 已在 10/9 付款跑付出（F110000042）。",
       "source": "邮件",
       "line": "KSL",
-      "note": "待拍板：立即转发 vs 先自阅再转",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "D 其他：已转Kurth",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 立即转 Commerzbank/Kurth",
         "B 先自阅再转",
         "C 暂不转",
         "D 其他…"
-      ]
+      ],
+      "chosen": "D"
     },
     {
       "id": "r1",
@@ -110,15 +116,16 @@
       "context": "多针细节（Ida）、Adient 自动化上下料精度风险、Morocco 刺绣/CNC 直订路径。出差前选过 C 继续搁置、不外发。你已在突尼斯介绍 Richpeace 汽车/服装产品；Alva 替代方案与 Richpeace 组装相关。需定是否重启这三条，或并入 Alva/CMC 报价线。",
       "source": "交接/邮件",
       "line": "Richpeace",
-      "note": "先前 C 搁置；出差结束可改",
-      "noteSource": "CW41 周报核对",
-      "noteAt": "2026-10-09 19:15 +01",
+      "note": "A 立刻重启三条跟进",
+      "noteSource": "Justin 拍板",
+      "noteAt": "2026-10-09 19:24 +01",
       "options": [
         "A 立刻重启三条跟进",
         "B 并入 Alva/CMC 线再议",
         "C 继续搁置",
         "D 其他…"
-      ]
+      ],
+      "chosen": "A"
     }
   ],
   "quadrants": {
@@ -319,20 +326,19 @@
   ],
   "scanNote": "CW41 修订版 10/9 傍晚：Outlook 10/5–10/9 核对；Interfracht 已付；TÜV 仅 10/12；Open House 已报名；PSR 新截止 10/15 10:00 | Richpeace: Alva替代方案+孟加拉会议",
   "lastBoard": {
-    "at": "2026-09-20 02:26 +08",
-    "choices": "1c,2d,3d,4c,5c,6c,7a,8c",
+    "at": "2026-10-09 19:24 +01",
+    "choices": "1c,2b,3a,4a,5a,6d,7a",
     "via": "chat-paste",
     "detail": {
-      "d4": "C 先搁置",
-      "d5": "D 内容知晓，不做批复",
-      "d6": "D 电话沟通，Ida自行处理",
-      "d1": "C 出差后再说",
-      "d2": "C 先搁置",
-      "d3": "C 不做",
-      "d7": "A 周一补交",
-      "r1": "C 继续搁置"
+      "d1": "C 搁置",
+      "d2": "B 指定 Müller/Guido 先出你审签",
+      "d3": "A 对账后付款",
+      "d4": "A 催 Meyer 确认公务出差",
+      "d5": "A 确认只出 KSL 并派人",
+      "d6": "D 其他：已转Kurth",
+      "r1": "A 立刻重启三条跟进"
     },
-    "note": "旧拍板已归档；CW41 看板为新开放项，待 Justin 重新选择"
+    "note": "CW41 拍板已记录：1c/2b/3a/4a/5a/6d/7a"
   },
   "version": "1.1"
 }
